@@ -6,19 +6,11 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-<title>web page lol</title>
+<title>DDelivery</title>
 </head>
 <body>
 
-<header class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
-<p class="h5 my-0 me-md-auto fw-normal">DDelivery</p>
-  <nav class="my-2 my-md-0 me-md-3">
-    <a class="p-2 text-dark" href="#">На Головну</a>
-    <a class="p-2 text-dark" href="#">Ресторани</a>
-    <a class="p-2 text-dark" href="#">Підтримка</a>
-  </nav>
-  <a class="btn btn-outline-primary" href="#">Увійти</a>
-  </header>
+<?php require "blocks/header.php" ?>
 
 <div class="container mt-5">
     <h3 class="mb-5">Страви дня</h3>
@@ -32,6 +24,7 @@
                         <h4 class="my-0 fw-normal">Назва страви</h4>
                     </div>
                     <div class="card-body">
+                        <img src="img/<?php echo ($i + 1) ?>.jpg" class="img-thumbnail" alt="">
                         <h1 class="card-title pricing-card-title">$11.99 <small class="text-muted">/ 15.00</small></h1>
                         <ul class="list-unstyled mt-3 mb-4">
                             <li>228 грам</li>
@@ -46,6 +39,8 @@
         <?php endfor; ?>
     </div>
 </div>
+
+<?php require "blocks/footer.php" ?>
 
 </body>
 </html>

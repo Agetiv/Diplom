@@ -13,6 +13,11 @@
 <?php require "blocks/header.php" ?>
 
 <div class="container mt-5">
+<h1 class="mb-5">Ласкаво просимо</h1>
+<input type="text" neme="text" placeholder="Пошук страви або ресторану за назвою" class="form-control"><br>
+</div>
+
+<div class="container mt-5">
     <h3 class="mb-5">Страви дня</h3>
     <div class="d-flex flex-wrap">
         <?php

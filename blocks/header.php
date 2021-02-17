@@ -2,9 +2,9 @@
 <p class="h5 my-0 me-md-auto fw-normal">DDelivery</p>
   <nav class="my-2 my-md-0 me-md-3">
     <a class="p-2 text-dark" href="index.php">На Головну</a>
-    <a class="p-2 text-dark" href="#">Ресторани</a>
+    <a class="p-2 text-dark" href="restourants.php">Ресторани</a>
     <a class="p-2 text-dark" href="help.php">Підтримка</a>
-    <a class="p-2 text-dark" href="help.php">Кошик</a>
+    <a class="p-2 text-dark" href="#">Кошик</a>
   </nav>
   <a class="btn btn-outline-primary" href="#">Увійти</a>
   </header>

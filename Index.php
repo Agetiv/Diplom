@@ -12,9 +12,10 @@
 
 <?php require "blocks/header.php" ?>
 
+<h1 class="mb-5" style="margin-left: 30px;">Ласкаво просимо!)</h1>
+
 <div class="container mt-5">
-<h1 class="mb-5">Ласкаво просимо</h1>
-<input type="text" neme="text" placeholder="Пошук страви або ресторану за назвою" class="form-control"><br>
+    <input type="text" neme="text" placeholder="Пошук страви або ресторану за назвою" class="form-control">
 </div>
 
 <div class="container mt-5">
@@ -25,20 +26,63 @@
         ?>
             <div class="col">
                 <div class="card mb-4 shadow-sm">
+
                     <div class="card-header">
-                        <h4 class="my-0 fw-normal">Назва страви</h4>
+                        <h4 class="my-0 fw-normal"> <?php 
+                        $data = file_get_contents("weekfood/name.txt"); //read the file
+                        $convert = explode("\r\n", $data); //create array separate by new line
+                        echo $convert[$i]. "<br>" ; //write value by index ?></h4>
                     </div>
+
                     <div class="card-body">
-                        <img src="img/<?php echo ($i + 1) ?>.jpg" class="img-thumbnail" alt="">
-                        <h1 class="card-title pricing-card-title">$11.99 <small class="text-muted">/ 15.00</small></h1>
-                        <ul class="list-unstyled mt-3 mb-4">
-                            <li>228 грам</li>
-                            <li>1337 kkol</li>
-                            <li>Оцінка: 5</li>
-                            <li>смакотища, атвічаю</li>
-                        </ul>
+                        <img src="weekfood/<?php echo ($i + 1) ?>.jpg" class="img-thumbnail" alt="">
+                        <h1 class="card-title pricing-card-title">
+                        <?php 
+                        $data = file_get_contents("weekfood/price.txt"); 
+                        $convert = explode("\r\n", $data); 
+                        echo $convert[$i]; ?>
+                         <small class="text-muted">/ oldPrice</small></h1>
+
+                            <ul class="list-unstyled mt-3 mb-4">
+
+                                <li>
+                                    <?php 
+                                        $data = file_get_contents("weekfood/gram.txt"); 
+                                        $convert = explode("\r\n", $data); 
+                                        echo $convert[$i]; 
+                                    ?>
+                                </li>
+                                
+                                <li> 
+                                    <?php 
+                                        $data = file_get_contents("weekfood/cal.txt"); 
+                                        $convert = explode("\r\n", $data); 
+                                        echo $convert[$i]; 
+                                    ?>
+                                </li>
+
+                                <li>
+                                    Оцінка:
+                                    <?php 
+                                        $data = file_get_contents("weekfood/mark.txt"); 
+                                        $convert = explode("\r\n", $data); 
+                                        echo $convert[$i]; 
+                                    ?>
+                                
+                                </li>
+
+                                <li>
+                                    <?php 
+                                        $data = file_get_contents("weekfood/coment.txt"); 
+                                        $convert = explode("\r\n", $data); 
+                                        echo $convert[$i]; 
+                                    ?>
+                                </li>
+
+                            </ul>
                         <button type="button" class="w-100 btn btn-lg btn-outline-primary">Замовити</button>
                     </div>
+
                 </div>
             </div>
         <?php endfor; ?>

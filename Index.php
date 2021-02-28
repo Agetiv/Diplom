@@ -47,9 +47,8 @@
 
                                 <li>
                                     <?php 
-                                        $data = file_get_contents("weekfood/gram.txt"); 
-                                        $convert = explode("\r\n", $data); 
-                                        echo $convert[$i]; 
+                                       $result = mysqli_query($success,"SELECT * FROM 'weekfood'");
+                                        echo $result; 
                                     ?>
                                 </li>
                                 

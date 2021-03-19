@@ -1,19 +1,30 @@
-<header class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <link rel='stylesheet' href='/blocks/style.css'>
 
-<?php require "connection.php" ?>
+    <header class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-body border-bottom shadow-sm">
+    <img src="/img/icon.png" alt="" width="50" height="50" >
+    <p class="h5 my-0 me-md-auto fw-normal"><a class="p-2 text-dark text__border" href="/index.php">DDelivery</a></p>
+    <nav class="my-2 my-md-0 me-md-3">
+        <a class="p-2 text-dark text__border" href="/restourants.php">ресторани</a>
+        <a class="p-2 text-dark text__border" href="#">щось новеньке</a>
+        <a class="p-2 text-dark text__border" href="/help.php">допомога</a>
+        <a class="p-2 text-dark text__border" href="#">кошик</a>
+    </nav>
+    <a class="btn btn-outline-primary" href="#">Увійти</a>
+    <a class="btn btn-outline-primary" href="/blocks/test.php">Test</a>
 
-<img class="mb-0,5" src="/img/ICON.png" alt="" width="50" height="50">
-<p class="h5 my-0 me-md-auto fw-normal"> DDelivery </p>
+    </header>
 
-<a class="btn btn-outline-primary" href="test.php" style="margin-left: 25px">Тест блок</a>
-
-  <nav class="my-2 my-md-0 me-md-3" style="margin-left: 720px;">
-    <a class="p-2 text-dark" href="index.php"> На Головну</a>
-    <a class="p-2 text-dark" href="restourants.php">Ресторани</a>
-    <a class="p-2 text-dark" href="help.php">Підтримка</a>
-    <a class="p-2 text-dark" href="connection.php">Кошик</a>
-  </nav>
-
-<a class="btn btn-outline-primary" href="#">Увійти</a>
-
-  </header>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
+    </script>
+</body>
+</html>

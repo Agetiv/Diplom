@@ -1,94 +1,61 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
-<link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-<title>DDelivery</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DDelivery</title>
 </head>
 <body>
 
-<?php require "blocks/header.php" ?>
+    <?php require "blocks/header.php"; ?>
 
-<h1 class="mb-5" style="margin-left: 30px;">Ласкаво просимо!)</h1>
+    <h1 class="mb-5" style="margin-left: 30px;">Ласкаво просимо!)</h1>
 
-<div class="container mt-5">
-    <input type="text" neme="text" placeholder="Пошук страви або ресторану за назвою" class="form-control">
-</div>
-
-<div class="container mt-5">
-    <h3 class="mb-5">Страви дня</h3>
-    <div class="d-flex flex-wrap">
-        <?php
-        for($i = 0; $i < 3; $i++):
-        ?>
-            <div class="col">
-                <div class="card mb-4 shadow-sm">
-
-                    <div class="card-header">
-                        <h4 class="my-0 fw-normal"> <?php 
-                        $data = file_get_contents("weekfood/name.txt"); //read the file
-                        $convert = explode("\r\n", $data); //create array separate by new line
-                        echo $convert[$i]. "<br>" ; //write value by index ?></h4>
-                    </div>
-
-                    <div class="card-body">
-                        <img src="weekfood/<?php echo ($i + 1) ?>.jpg" class="img-thumbnail" alt="">
-                        <h1 class="card-title pricing-card-title">
-                        <?php 
-                        $data = file_get_contents("weekfood/price.txt"); 
-                        $convert = explode("\r\n", $data); 
-                        echo $convert[$i]; ?>
-                         <small class="text-muted">/ oldPrice</small></h1>
-
-                            <ul class="list-unstyled mt-3 mb-4">
-
-                                <li>
-                                    <?php 
-                                       $result = mysqli_query($success,"SELECT * FROM 'weekfood'");
-                                        echo $result; 
-                                    ?>
-                                </li>
-                                
-                                <li> 
-                                    <?php 
-                                        $data = file_get_contents("weekfood/cal.txt"); 
-                                        $convert = explode("\r\n", $data); 
-                                        echo $convert[$i]; 
-                                    ?>
-                                </li>
-
-                                <li>
-                                    Оцінка:
-                                    <?php 
-                                        $data = file_get_contents("weekfood/mark.txt"); 
-                                        $convert = explode("\r\n", $data); 
-                                        echo $convert[$i]; 
-                                    ?>
-                                
-                                </li>
-
-                                <li>
-                                    <?php 
-                                        $data = file_get_contents("weekfood/coment.txt"); 
-                                        $convert = explode("\r\n", $data); 
-                                        echo $convert[$i]; 
-                                    ?>
-                                </li>
-
-                            </ul>
-                        <button type="button" class="w-100 btn btn-lg btn-outline-primary">Замовити</button>
-                    </div>
-
-                </div>
-            </div>
-        <?php endfor; ?>
+    <div class="container mt-5">
+        <input type="text" neme="text" placeholder="Пошук страви або ресторану за назвою" class="form-control">
     </div>
-</div>
 
-<?php require "blocks/footer.php" ?>
+    <h2 style="margin-left: 30px; margin-top:20px;">Наші партнери:</h2>
 
+    <section class="rests">
+        <div class="rest">
+            <h2 class="text__header">McDonalds</h2>
+            <img src="/img/mcdonalds.png" class="img__rests" alt="">
+            <button class="butn"onClick='location.href="www.mcdonalds.com'>Завітати</button>
+        </div>
+        <div class="rest">
+            <h2 class="text__header">Chin-Chin</h2>
+            <img src="/img/chinchin.png" class="img__rests" alt="">
+            <button class="butn">Завітати</button>
+        </div>
+        <div class="rest">
+            <h2 class="text__header">Kenza</h2>
+            <img src="/img/kenza.jpg" class="img__rests" alt="">
+            <button class="butn">Завітати</button>
+        </div>
+        <div class="rest">
+            <h2 class="text__header">this.Bao</h2>
+            <img src="/img/bao.png" class="img__rests" alt="">
+            <button class="butn">Завітати</button>
+        </div>
+        
+
+    </section>
+
+    
+
+
+
+
+
+
+    <?php require "blocks/futter.php"; ?>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
+    </script>
 </body>
 </html>

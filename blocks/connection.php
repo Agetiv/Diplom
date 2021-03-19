@@ -1,4 +1,5 @@
 <?php
+
 $user = 'root';
 $password = 'root';
 $db = 'ddeliverybase';
@@ -6,7 +7,7 @@ $host = 'localhost';
 $port = 8889;
 
 $link = mysqli_init();
-$success = mysqli_real_connect(
+$connect = mysqli_real_connect(
    $link, 
    $host, 
    $user, 
@@ -15,12 +16,12 @@ $success = mysqli_real_connect(
    $port
 );
 
-if(!$success)
-{
-    die ('-');
+if(! $connect){ 
+   die ('error of connection database');
 }
-else 
-{
-    echo '+';
+else { 
+   echo 'welcome'; 
 }
+
+
 ?>

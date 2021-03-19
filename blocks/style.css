@@ -1,0 +1,56 @@
+.text__border{
+    text-decoration: none;
+}
+.rest {
+    border: 1.5px solid #212529;
+    border-radius: 25px; 
+    height: 300px; 
+    width: 250px;
+    padding: 15px;
+    margin: 30px 15px 30px 15px;
+}
+.rests {
+    display: flex;
+    justify-content: center;
+}
+.butn {
+    border: 1.5px solid #0d6efd;
+    border-radius: .25rem;
+    color: #0d6efd;
+    background-color:white;
+    width: 215px;
+    height: 40px;
+    margin-top: 15px;
+}
+.butn:hover {
+    color: white;
+    background-color: #0d6efd;    
+    tansition: all .3s linear;
+    -webkit-transition: all .3s linear;
+    -moz-transition: all .3s linear; 
+}
+.text__header {
+    text-align: center;
+
+}
+.img__rests{
+    height: 150px;
+    width: 215px;
+}
+.choise {
+    display: flex;
+}
+.first__line {
+display: flex;}
+.first__line__butns {
+    padding: 15px;
+}
+.first__line__rests {
+display: flex;
+}
+.other__rests {
+    display: flex;
+}
+.other__rests__info{
+    width: 245px;
+}

@@ -16,7 +16,7 @@
 <br>
 <form action="check.php" method="post">
 <input type="mail" neme="mail" placeholder="Введіть свій Email" class="form-control"><br>
-<textarea name="Повідомлення" placeholder="Опишіть проблему" class="form-control"></textarea><br>
+<textarea name="Повідомлення" placeholder="Вкажіть номер замовлення та опишіть проблему" class="form-control"></textarea><br>
 <button type="submit" name="send" class="btn btn-success">Відправити</button>
 </form>
 </div>

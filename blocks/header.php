@@ -20,7 +20,7 @@
         <a class="p-2 text-dark text__border" href="#">кошик</a>
     </nav>
     <a class="btn btn-outline-primary" href="#">Увійти</a>
-    <a class="btn btn-outline-primary" href="/blocks/test.php">Test</a>
+    <a class="btn btn-outline-primary" href="/courier.php">Test</a>
 
     </header>
 

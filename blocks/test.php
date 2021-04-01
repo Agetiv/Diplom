@@ -16,7 +16,7 @@
         <!-- Данный php кусок возвращает значение "NULL"
     P.S. подключение к БД работает, таблица rests существует, данные в ней есть, орфографию проверил -->
     <?php
-        $rests = mysqli_query($connect, "SELECT * FROM `rests`");
+        $rests = mysqli_query($connect, "SELECT * FROM rests ");
 
         var_dump($rests);       
     ?>

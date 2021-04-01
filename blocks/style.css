@@ -1,6 +1,13 @@
 .text__border{
     text-decoration: none;
 }
+.text__midle {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+    text-align: center;
+}
 .rest {
     border: 1.5px solid #212529;
     border-radius: 25px; 
@@ -53,4 +60,45 @@ display: flex;
 }
 .other__rests__info{
     width: 245px;
+}
+
+.top__imges{
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 10px;
+
+}
+.go__menu{
+    text-align: center;
+}
+.go__menu__img{
+
+}
+
+/* courier.php */
+
+.courier__header{
+    height: 60px;
+    border: 1.5px solid #212529;
+    display: flex;
+    text-align: center;
+}
+.courier__headtext{
+    padding-top: 10px;
+    font-size: 20px;
+}
+
+.orders__list{
+    border: 1.5px solid #212529;
+    border-radius: 25px; 
+    width: 300px;
+    height: 400px;
+    margin: auto;
+    margin-top: 20px;
+    padding: 10px;
+
+}
+.courier__butn{
+    width: 300px;
+    margin: 35px;
 }

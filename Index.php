@@ -24,7 +24,7 @@
         <div class="rest">
             <h2 class="text__header">McDonalds</h2>
             <img src="/img/mcdonalds.png" class="img__rests" alt="">
-            <button class="butn"onClick='location.href="www.mcdonalds.com'>Завітати</button>
+            <button class="butn" onclick="document.location='mcdonalds.php'">Завітати</button>
         </div>
         <div class="rest">
             <h2 class="text__header">Chin-Chin</h2>

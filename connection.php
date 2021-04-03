@@ -20,7 +20,7 @@ if(! $connect){
    die ('error of connection database');
 }
 else { 
-   echo 'welcome'; 
+   echo 'database connected'; 
 }
 
 

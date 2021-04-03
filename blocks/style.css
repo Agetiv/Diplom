@@ -102,3 +102,29 @@ display: flex;
     width: 300px;
     margin: 35px;
 }
+/*============= */
+.form-signin {
+    max-width: 400px;
+    padding: 15px;
+    margin: 0 auto;
+    text-align: center;
+}
+.header__mobile{
+    display: block;        
+}
+.header__pc{
+    display: none;
+}
+.block__element{
+    width: 100%;
+    margin: 5px;
+}
+
+@media (min-width: 768px) {
+    .header__mobile{
+        display: none;        
+    }
+    .header__pc{
+        display: block;
+    }
+}

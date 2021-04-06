@@ -100,7 +100,8 @@ display: flex;
 }
 .courier__butn{
     width: 300px;
-    margin: 35px;
+    margin-left: 65px;
+    margin-top: 20px;
 }
 /*============= */
 .form-signin {
@@ -110,21 +111,55 @@ display: flex;
     text-align: center;
 }
 .header__mobile{
-    display: block;        
+    display: none;        
 }
 .header__pc{
-    display: none;
+    display: block;
 }
 .block__element{
     width: 100%;
     margin: 5px;
 }
 
-@media (min-width: 768px) {
+@media (max-width: 768px) {
     .header__mobile{
-        display: none;        
+        display: block;        
     }
     .header__pc{
-        display: block;
+        display: none;
     }
+    .rests{
+        display: grid;
+    }
+    .rest{
+        width: auto;
+        height: 165px;
+        margin: 10px;
+    }
+    .img__rests{
+        height: 100px;
+        width: auto;
+    }
+    .butn {
+        margin: 10px;
+    }
+    /*============= */
+    .first__line__butns{
+        display: none;
+    }
+    .first__line__rests{
+        width: auto;
+        height: 165px;
+        margin: 10px;
+        display: grid; 
+    }
+    .first__line{
+        display: grid;
+    }
+    .other__rests{
+        display: none;
+    }
+
+  
+    
 }

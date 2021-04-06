@@ -41,6 +41,8 @@
             <img src="/img/bao.png" class="img__rests" alt="">
             <button class="butn">Завітати</button>
         </div>
+
+        
         
 
     </section>

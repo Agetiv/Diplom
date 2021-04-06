@@ -14,7 +14,7 @@
     <section class="header__mobile">
         <nav class="navbar navbar-expand-lg navbar-light">
             <div class="container-fluid">
-                <a href="index.html" ><img src="img/icon.png" alt="logo" class="header_logo_1" style="width: 50px;"></a>
+                <a href="index.php" ><img src="img/icon.png" alt="logo" class="header_logo_1" style="width: 50px;"></a>
                 <p2>DDelivery</p2>
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -46,7 +46,7 @@
             <a class="p-2 text-dark text__border" href="#">кошик</a>
         </nav>
         <a class="btn btn-outline-primary" href="login.php">Увійти</a>
-        <a class="btn btn-outline-primary" href="test.php">Test</a>
+        <a class="btn btn-outline-primary" href="courier.php">Test</a>
 
         </header>
     </section>

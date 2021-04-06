@@ -13,7 +13,7 @@
     <section class="courier__header">
         <img src="/img/icon.png" alt="" width="50" height="50" >
         <p href="/index.php" class="courier__headtext">DDelivery</a></p>
-
+        
         <div class="dropdown" style="margin: 10px 10px 0px 160px;">
             <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
                 Ще
@@ -27,6 +27,8 @@
         </div>
 
     </section>
+
+    <h4 style="text-align: center; margin: 10px;">Актуальні замовлення:</h4>
 
     <section class="orders__list">
         <button class="butn" style="width: 100%;" data-bs-toggle="modal" data-bs-target="#food_settings">Вул. Пироговського</button>
@@ -61,7 +63,7 @@
     </section>
 
     <section class="courier__take">
-        <button class="butn courier__butn">Деталі</button>
+        <button class="butn courier__butn">Зв'язок з оператором</button>
     </section> 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">

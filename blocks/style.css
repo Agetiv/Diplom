@@ -6,7 +6,7 @@
     font-weight: normal;
     font-size: 14px;
     line-height: 16px;
-    text-align: center;
+    text-align: left;
 }
 .rest {
     border: 1.5px solid #212529;
@@ -71,9 +71,7 @@ display: flex;
 .go__menu{
     text-align: center;
 }
-.go__menu__img{
 
-}
 
 /* courier.php */
 
@@ -120,6 +118,9 @@ display: flex;
     width: 100%;
     margin: 5px;
 }
+.user__info{
+    margin: 10px;
+}
 
 @media (max-width: 768px) {
     .header__mobile{
@@ -159,6 +160,8 @@ display: flex;
     .other__rests{
         display: none;
     }
+        /*============= */
+    
 
   
     

@@ -4,7 +4,7 @@ $user = 'root';
 $password = 'root';
 $db = 'ddeliverybase';
 $host = 'localhost';
-$port = 8889;
+$port = 3309;
 
 $link = mysqli_init();
 $connect = mysqli_real_connect(

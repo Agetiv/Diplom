@@ -36,7 +36,7 @@
                 </tr>
             </table>
         </div>
-        <div class="first__line__rests">
+        <div class="first__line__rests" style="height: auto;">
             <div class="rest">
                 <h2 class="text__header">McDonalds</h2>
                 <img src="/img/mcdonalds.png" class="img__rests" alt="">
@@ -60,7 +60,7 @@
         </div>
     </section>
 
-    <section class="other__rests">
+    <section class="other__rests" style="height: auto;">
         <div class="other__rests__info">
 
         </div>

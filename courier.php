@@ -10,17 +10,17 @@
     <link rel='stylesheet' href='/blocks/style.css'>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 
-    <section class="courier__header">
+    <section class="courier__header shadow-sm">
         <img src="/img/icon.png" alt="" width="50" height="50" >
         <p href="/index.php" class="courier__headtext">DDelivery</a></p>
         
-        <div class="dropdown" style="margin: 10px 10px 0px 160px;">
+        <div class="dropdown" style="margin-left:auto; padding: 10px">
             <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
                 Ще
             </a>
 
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                <li><a class="dropdown-item" href="#">Кабінет</a></li>
+                <li><a class="dropdown-item" href="cabinet.php">Кабінет</a></li>
                 <li><a class="dropdown-item" href="#">Активне замовлення</a></li>
                 <li><a class="dropdown-item" href="#"></a>Список замовлень</li>
             </ul>
@@ -31,7 +31,7 @@
     <h4 style="text-align: center; margin: 10px;">Актуальні замовлення:</h4>
 
     <section class="orders__list">
-        <button class="butn" style="width: 100%;" data-bs-toggle="modal" data-bs-target="#food_settings">Вул. Пироговського</button>
+        <button class="butn butn__orders" style="width: 100%;" data-bs-toggle="modal" data-bs-target="#food_settings">Вул. Пироговського</button>
 
 
         <div class="modal fade" id="food_settings" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -47,7 +47,9 @@
                         <p>БігМак меню х1</p>
                         <p>------------</p>
                         <p>Додаткова інформація:</p>
-                        <p>Кв. 51</p>
+                        <p>Влад Тулісов</p>
+                        <p>+38(097)12-121-12</p>
+                        <p>парадна 2, Кв. 51</p>
                         <p>Коментар:</p>
 
 
@@ -62,7 +64,7 @@
         </div>
     </section>
 
-    <section class="courier__take">
+    <section class="hotline__call" style="text-align: center;">
         <button class="butn courier__butn">Зв'язок з оператором</button>
     </section> 
 

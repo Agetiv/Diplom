@@ -59,12 +59,12 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <p>Смачнюші нагетси, які тануть у роті</p>
+                <p>Смачнюші нагетси, які тануть у роті - це свіже філе курки, обсмажене в паніруванні!</p>
                 <p>Оберіть кількість:</p>
                 <div>
-                <input type="checkbox" name="remember" checked="checked" /> x6 <br>
-                <input type="checkbox" name="remember" checked="checked" /> x10 <br>
-                <input type="checkbox" name="remember" checked="checked" /> x18 <br>
+                <input type="checkbox" name="remember" value="1"/> 6 шт. 60 грн. <br><br>
+                <input type="checkbox" name="remember" value="2"/> 10 шт. 100 грн. <br><br>
+                <input type="checkbox" name="remember" value="3"/> 18 шт. 150 грн. <br><br>
                 </div>
             </div>
             <div class="modal-footer">

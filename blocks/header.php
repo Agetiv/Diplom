@@ -11,7 +11,7 @@
     <link rel='stylesheet' href='/blocks/style.css'>
     <?php require "connection.php";?>
 
-    <section class="header__mobile">
+    <section class="header__mobile shadow-sm">
         <nav class="navbar navbar-expand-lg navbar-light">
             <div class="container-fluid">
                 <a href="index.php" ><img src="img/icon.png" alt="logo" class="header_logo_1" style="width: 50px;"></a>
@@ -29,6 +29,7 @@
                     </div>
                     <div class="navbar-nav_1">
                 <a class="nav-link" href="login.php">Увійти</a>
+                <a class="nav-link" href="courier.php">test</a>
               </div>
                 </div>
             </div>
@@ -46,7 +47,7 @@
             <a class="p-2 text-dark text__border" href="#">кошик</a>
         </nav>
         <a class="btn btn-outline-primary" href="login.php">Увійти</a>
-        <a class="btn btn-outline-primary" href="courier.php">Test</a>
+        <a class="btn btn-outline-primary" href="test.php">Test</a>
 
         </header>
     </section>

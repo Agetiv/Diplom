@@ -27,30 +27,16 @@
             $password = 'root';
             $db = 'ddeliverybase';
             $host = 'localhost';
-            $port = 8889;
+            $port = 3309;
 
-            $link = mysqli_init();
-            $success = mysqli_real_connect(
-            $link, 
-            $host, 
-            $user, 
-            $password, 
-            $db,
-            $port
-            );
+            $link = mysqli_connect('localhost','root','root','ddeliverybase');
 
-            if(! $success){echo "error";}
-            else {echo "connected";}
-
-
-            $query1 = mysqli_query($success, "SELECT * FROM users");
-
-            $myrow = mysqli_fetch_array($query1);
-
-            while($row=mysqli_fetch_array($query1))
+            if(mysqli_connect_errno())
             {
-            echo $row['id'],' ', $row['name'],' ', $row['email'],' ', $row['password'],' ', $row['active']. "<br />";
+                echo('Ошибка подключения ('.mysqli_connect_errno().'): ' .mysqli_connect_error());
+                exit();
             }
+
 
 
         ?>

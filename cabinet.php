@@ -11,11 +11,13 @@
 
     <section class="user__info">
         <h2>Вітаємо!</h2>
-        <p class="text__midle">Ім'я: <?php $username;?> </p><br>
+        <p class="text__midle">Ім'я: <?php echo $username;?> </p><br>
         <p class="text__midle">Номер: <?php $phone;?> </p><br>
         <p class="text__midle">Email: <?php $email;?> </p><br>
         <p class="text__midle">Адреса: <?php $address;?> </p><br>
     </section>
+
+    <a class='btn btn-primary btn-block block__element' href='logout.php'>logout</a>
 
     <section class="last__orders">
         <h4>Останні замовлення:</h4>

@@ -19,8 +19,8 @@
             $email = $_POST['email'];
             $password = $_POST['password'];
             
-            $query = "INSERT INTO users (username, email, password) VALUES ('$username', '$email', '$password')";
-            $result = mysqli_query($connect, $query);
+            $query = "INSERT INTO users (username, email, password, active) VALUES ('$username', '$email', '$password', '1')";
+            $result = mysqli_query($link, $query);
 
             if($result)
             {
@@ -29,6 +29,9 @@
             else
             {
                 $fsmsg="Error";
+
+                var_dump($query);
+                echo($query);
             }
         }
     ?>

@@ -17,7 +17,7 @@
 
 
         <div class="container">
-            <form action="" class="form-signin" method="POST">
+            <form action="login.php" class="form-signin" method="POST">
                 <h2>Login</h2>
 
                 <input type="text" name="username" class="form-control block__element" placeholder="username" required>
@@ -32,15 +32,25 @@
         <?php
             session_start();
             require ('connection.php');
+            print_r($_POST);
+            
             if(isset($_POST['username']) && isset($_POST['password']))
             {
                 $username = $_POST['username'];
                 $password = $_POST['password'];
 
-                $query = "SELECT * FROM users WHERE username='$username' and password='password'";
-                $result = mysqli_query($connect, $query) or die( mysqli_error($connect));
+                $query = "SELECT * FROM users WHERE username='$username' and password='$password'";
+                echo($query);
+                $result = mysqli_query($link, $query);
+                if(!$result)
+                {
+                        echo('Ошибка подключения ('.mysqli_connect_errno().'): ' .mysqli_connect_error());
+                        exit();
+                    
+                }
                 $count = mysqli_num_rows($result);
-    
+
+
                 if($count ==1)
                 {
                     $_SESSION['username'] = $username;
@@ -56,9 +66,9 @@
             {
                 $username = $_SESSION['username'];
                 echo "Вітаємо, " . $username . "!";
-                echo "<a class='btn btn-primary btn-block block__element' href='registration.php'>registration</a>";
+                header('Location: cabinet.php');
+                exit;
             }
-           
         ?>
 
 

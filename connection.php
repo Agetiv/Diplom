@@ -16,12 +16,12 @@ $connect = mysqli_real_connect(
    $port
 );
 
-if(! $connect){ 
-   die ('error of connection database');
-}
-else { 
-   echo 'database connected'; 
-}
+//if(! $connect){ 
+//   die ('error of connection database');
+//}
+//else { 
+//   echo 'database connected'; 
+//}
 
 
 ?>

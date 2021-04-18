@@ -41,11 +41,12 @@
     
     </section>
 
+    <?php echo '$id';?>
     <section class="rests">
         <div class="rest">
             <img src="/img/2351_Nuggets6_1500x1500_inimitable-_2_min.webp" class="img__rests" alt="">
             <p class="text__midle"> Нагетси</p>            
-            <button class="butn" data-bs-toggle="modal" data-bs-target="#food_settings">Деталі</button>       
+           <p> <button class="butn btn-primary btn-buy"id="3" >add</button></p>       
 
     </section>
 
@@ -69,12 +70,27 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Скасувати</button>
-                <button type="button" class="btn btn-primary">Додати до кошику</button>
+                <button type="button" class="btn btn-primary btn-buy" id="3">Додати до кошику</button>
             </div>
             </div>
         </div>
     </div>
 
+    
+
+    <script>
+        $('.btn-buy').click(function () {//клип на кнопку
+            var id = $(this).attr('id'); //получаем id этой кнопки
+                $.ajax({//передаем ajax-запросом данные
+                type: "POST", //метод передачи данных
+                url: '/addtocart.php',//php-файл для обработки данных
+                data: {id_tov: id},//передаем наши данные
+                success: function(data) {//
+                    $('.basker_kol').html(data);//меняем количество товаров на кнопке корзины 
+                    }
+                });
+        });
+    </script>
 
 
 
@@ -86,6 +102,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
     </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-migrate-3.3.2.min.js"></script>
     <script src="https://maxcdn.dootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </body>

@@ -9,6 +9,9 @@
 </head>
 <body>
     <link rel='stylesheet' href='/blocks/style.css'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-migrate-3.3.2.min.js"></script>
+
     <?php require "connection.php";?>
 
     <section class="header__mobile shadow-sm">
@@ -44,9 +47,9 @@
             <a class="p-2 text-dark text__border" href="/restourants.php">ресторани</a>
             <a class="p-2 text-dark text__border" href="#">щось новеньке</a>
             <a class="p-2 text-dark text__border" href="/help.php">допомога</a>
-            <a class="p-2 text-dark text__border" href="#">кошик</a>
+            <a class="p-2 text-dark text__border" href="cart.php"> кошик <span class="badge basker_kol">0</span></a>
         </nav>
-        <a class="btn btn-outline-primary" href="login.php">Увійти</a>
+        <a class="btn btn-outline-primary" href="login.php">Кабінет</a>
         <a class="btn btn-outline-primary" href="test.php">Test</a>
 
         </header>

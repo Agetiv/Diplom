@@ -38,13 +38,21 @@
              $port
           );
 
-          $query = "SELECT * FROM users";
-          $result =mysqli_query($link, $query);
+          
+          $query ="SELECT name FROM food";
+ 
+          $result = mysqli_query($link, $query) or die("Ошибка " . mysqli_error($link)); 
           if($result)
           {
-              echo('YRA');
+              echo "<ul>";
+              while ($row = mysqli_fetch_row($result)) {
+                  echo "<li>$row[0]</li>";
+              }
+              echo "</ul>";
+               
+              mysqli_free_result($result);
           }
-          else echo('error');
+                
         ?>
     
     </section>

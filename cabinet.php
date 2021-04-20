@@ -13,7 +13,7 @@
 
     <section class="user__info">
         <h2>Вітаємо!</h2>
-        <p class="text__midle">Ім'я: <?php echo $_SESSION['username'];?> </p><br>
+        <p class="text__midle">Користувач: <?php echo $_SESSION['username'];?> </p><br>
         <p class="text__midle">Номер: <?php $phone;?> </p><br>
         <p class="text__midle">Email: <?php $email;?> </p><br>
         <p class="text__midle">Адреса: <?php $address;?> </p><br>

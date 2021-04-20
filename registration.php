@@ -13,13 +13,15 @@
     <?php require "blocks/header.php"; ?>
 
     <?php require ('connection.php');
+    
         if(isset($_POST['username']) && isset($_POST['password']))
         {
             $username = $_POST['username'];
             $email = $_POST['email'];
             $password = $_POST['password'];
+            $phone = $_POST ['phone'];
             
-            $query = "INSERT INTO users (username, email, password, active) VALUES ('$username', '$email', '$password', '1')";
+            $query = "INSERT INTO users (username, email, password, phone) VALUES ('$username', '$email', '$password', '$phone')";
             $result = mysqli_query($link, $query);
 
             if($result)
@@ -46,6 +48,7 @@
 
 
             <input type="text" name="username" class="form-control block__element" placeholder="username" required>
+            <input type="text" name="phone" class="form-control block__element" placeholder="phone" required>
             <input type="email" name="email" class="form-control block__element" placeholder="email" required>
             <input type="password" name="password" class="form-control block__element" placeholder="password" required>
             <button class="btn btn-lg btn-primary btn-block block__element" type="submit">Registration</button>

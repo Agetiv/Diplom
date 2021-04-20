@@ -11,26 +11,26 @@
     <?php require "blocks/header.php"; ?>
 
     <section class="top__imges">
-            <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-            <img src="img/SITEn_MCD_bonus_1200x400_min.webp" class="d-block w-100" alt="...">
+        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="img/SITEn_MCD_bonus_1200x400_min.webp" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="img/SITEn_LunchSetBM_1200x400_min.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="img/SITEn_Nuggets_1200x400_noPrice_min.jpg" class="d-block w-100" alt="...">
+                </div>
             </div>
-            <div class="carousel-item">
-            <img src="img/SITEn_LunchSetBM_1200x400_min.jpg" class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-            <img src="img/SITEn_Nuggets_1200x400_noPrice_min.jpg" class="d-block w-100" alt="...">
-            </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"  data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"  data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"  data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"  data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
         </div>
     
     </section>
@@ -41,12 +41,19 @@
     
     </section>
 
-    <?php echo '$id';?>
+ 
     <section class="rests">
         <div class="rest">
             <img src="/img/2351_Nuggets6_1500x1500_inimitable-_2_min.webp" class="img__rests" alt="">
             <p class="text__midle"> Нагетси</p>            
-           <p> <button class="butn btn-primary btn-buy"id="3" >add</button></p>       
+           <p> <button class="butn btn-primary btn-buy"id="1" >add</button></p> 
+        </div>      
+
+        <div class="rest">
+            <img src="/img/Double Chicken Kentuky.jfif" class="img__rests" alt="">
+            <p class="text__midle"> Дабл Чикен Кентуки</p>            
+           <p> <button class="butn btn-primary btn-buy"id="2" >add</button></p> 
+        </div>      
 
     </section>
 
@@ -55,22 +62,22 @@
     <div class="modal fade" id="food_settings" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Нагетси</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Нагетси</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
             <div class="modal-body">
                 <p>Смачнюші нагетси, які тануть у роті - це свіже філе курки, обсмажене в паніруванні!</p>
                 <p>Оберіть кількість:</p>
                 <div>
-                <input type="checkbox" name="remember" value="1"/> 6 шт. 60 грн. <br><br>
-                <input type="checkbox" name="remember" value="2"/> 10 шт. 100 грн. <br><br>
-                <input type="checkbox" name="remember" value="3"/> 18 шт. 150 грн. <br><br>
+                    <input type="checkbox" name="remember" value="1"/> 6 шт. 60 грн. <br><br>
+                    <input type="checkbox" name="remember" value="2"/> 10 шт. 100 грн. <br><br>
+                    <input type="checkbox" name="remember" value="3"/> 18 шт. 150 грн. <br><br>
                 </div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Скасувати</button>
-                <button type="button" class="btn btn-primary btn-buy" id="3">Додати до кошику</button>
+                <button type="button" class="btn btn-primary btn-buy" id="1">Додати до кошику</button>
             </div>
             </div>
         </div>

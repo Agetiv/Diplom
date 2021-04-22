@@ -14,6 +14,8 @@
 
     <section class="page">
         <?php session_start();
+        #$order;
+        #$totalprise;
         if (!isset($_SESSION['cart'])):?>
 
         <h3>Порожньо...</h3>
@@ -25,13 +27,29 @@
                 <tr id="<?=$id?>">
                     <td>
                         <?php 
-                            $query ="SELECT name FROM food WHERE id='$id'";
+                            $query ="SELECT name, price FROM food WHERE id='$id'";
  
                             $result = mysqli_query($link, $query); 
                             if($result)
                             {
                                 while ($row = mysqli_fetch_row($result)) {
+                                    $order.='+';
+                                    $order.=$row[0];
                                     echo "<li>$row[0]</li>";
+                                }                                
+                            }
+                        ?>
+                    </td>
+                    <td>
+                    <?php 
+                            $query ="SELECT price FROM food WHERE id='$id'";
+ 
+                            $result = mysqli_query($link, $query); 
+                            if($result)
+                            {
+                                while ($row = mysqli_fetch_row($result)) {
+                                    $totalprise=$totalprise+$row[0];
+                                    echo " - $row[0] грн.";
                                 }                                
                             }
                         ?>
@@ -39,9 +57,36 @@
                     <td><input type="number" class="count-product border" id="<?=$id?>" value="<?=$kol?>"></td>
                     <td><button class="butn__del btn-default btn-del" id="<?=$id?>">Х</button></td>
                 </tr>
-                <?php endforeach; ?>
+                <?php endforeach; ?>                
         </table>
-        <button class="butn"> Замовити</button>        
+        <br>
+        <h5>Товарів на сумму: <?php echo $totalprise;?> грн.</h5>
+
+        <?php
+            # Если кнопка нажата
+            if( isset( $_POST['orderTime'] ) )
+            {
+                if(isset($order))
+                {                        
+                    $query = "INSERT INTO test (ordertext) VALUES ('$order')";
+                    $result = mysqli_query($link, $query);
+                    if($result)
+                    {
+                        echo "Дякуємо за замовлення!";
+                    }
+                    else
+                    {
+                        echo "Error";
+                        echo($query);
+                    }           
+                }
+            }
+        ?>
+
+        <form method="POST">
+            <input type="submit" class="butn" name="orderTime" value="Замовити">
+        </form>
+          
         <?php endif; ?>    
         
         

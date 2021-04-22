@@ -52,7 +52,11 @@
                
               mysqli_free_result($result);
           }
-                
+            $order;
+            $order.="bred";
+            echo $order;
+            
+
         ?>
     
     </section>

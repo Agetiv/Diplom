@@ -55,9 +55,20 @@
             $order;
             $order.="bred";
             echo $order;
-            
+        ?>  
+            <br>
+            <br>
 
-        ?>
+            <script>
+                function myFunction()
+                {
+                alert("I am an alert box!"); // this is the message in ""
+                }
+            </script>
+
+            <input type="button" class="butn" onclick="myFunction()" value="Show alert box">
+            <button class="butn" onclick="myFunction()"> alert box 3000</button>
+
     
     </section>
     

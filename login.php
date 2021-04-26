@@ -39,21 +39,26 @@
                 $username = $_POST['username'];
                 $password = $_POST['password'];
 
-                $query = "SELECT * FROM users WHERE username='$username' and password='$password'";
+                $query = "SELECT id FROM users WHERE username='$username' and password='$password'";
                 echo($query);
                 $result = mysqli_query($link, $query);
                 if(!$result)
                 {
-                        echo('Ошибка подключения ('.mysqli_connect_errno().'): ' .mysqli_connect_error());
-                        exit();
+                    echo('Ошибка подключения ('.mysqli_connect_errno().'): ' .mysqli_connect_error());
+                    exit();
                     
                 }
                 $count = mysqli_num_rows($result);
-
-
+                               
                 if($count ==1)
                 {
                     $_SESSION['username'] = $username;
+
+                    while ($row = mysqli_fetch_row($result)) 
+                    {
+                    $_SESSION['user_id']=$row[0];
+                    } 
+
                 }
                 else 
                 {
@@ -64,8 +69,6 @@
             
             if(isset($_SESSION['username']))
             {
-                $username = $_SESSION['username'];
-                echo "Вітаємо, " . $username . "!";
                 header('Location: cabinet.php');
                 exit;
             }

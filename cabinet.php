@@ -10,16 +10,50 @@
     <?php require "blocks/header.php";?>
 
     <?php session_start();?>
-
+    <?php $user_id = $_SESSION['user_id'];?>
     <section class="user__info">
         <h2>Вітаємо!</h2>
         <p class="text__midle">Користувач: <?php echo $_SESSION['username'];?> </p><br>
-        <p class="text__midle">Номер: <?php $phone;?> </p><br>
-        <p class="text__midle">Email: <?php $email;?> </p><br>
-        <p class="text__midle">Адреса: <?php $address;?> </p><br>
+        <p class="text__midle">Номер: 
+        <?php
+            $query ="SELECT phone FROM users WHERE id='$user_id'";
+            $result = mysqli_query($link, $query); 
+            if($result)
+            {
+                while ($row = mysqli_fetch_row($result)) {
+                    $_SESSION['phone']=$row[0];
+                    echo "$row[0]";
+                }                                
+            }
+        ?> </p><br>
+        <p class="text__midle">Email: 
+        <?php
+            $query ="SELECT email FROM users WHERE id='$user_id'";
+            $result = mysqli_query($link, $query); 
+            if($result)
+            {
+                while ($row = mysqli_fetch_row($result)) {
+                echo "$row[0]";
+                }                                
+            }
+        ?> </p><br>
+        <p class="text__midle">Адреса: 
+        <?php
+            $query ="SELECT address FROM users WHERE id='$user_id'";
+            $result = mysqli_query($link, $query); 
+            if($result)
+            {
+                while ($row = mysqli_fetch_row($result)) {
+                    $_SESSION['address'] =$row[0];
+                echo "$row[0]";
+                }                                
+            }
+        ?> </p><br>
+        <a class='btn btn-primary btn-block' href='change_info.php'>редагувати</a>
+
     </section>
 
-    <a class='btn btn-primary btn-block block__element' href='logout.php'>logout</a>
+    <a class='btn btn-primary btn-block block__element' href='logout.php'>Вийти</a>
 
     <section class="last__orders">
         <h4>Останні замовлення:</h4>

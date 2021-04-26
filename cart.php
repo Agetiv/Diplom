@@ -61,24 +61,49 @@
         </table>
         <br>
         <h5>Товарів на сумму: <?php echo $totalprise;?> грн.</h5>
+        
+        <?php echo date('l jS \of F Y h:i:s A');?>
 
         <?php
             # Если кнопка нажата
             if( isset( $_POST['orderTime'] ) )
             {
                 if(isset($order))
-                {                        
-                    $query = "INSERT INTO test (ordertext) VALUES ('$order')";
-                    $result = mysqli_query($link, $query);
-                    if($result)
-                    {
-                        echo "Дякуємо за замовлення!";
+                {   
+                    if(!isset($_SESSION['username']))
+                    {   
+  
+                       ?> <script>                               
+                        alert("Авторизуйтесь!");                           
+                        </script> <?php
                     }
                     else
                     {
-                        echo "Error";
-                        echo($query);
-                    }           
+                        $username = $_SESSION['username'];
+                        $address = $_SESSION['address'];
+                        $coment;
+                        $active = 1;
+                        $done = 0;
+                        $time = date('j, n, Y, g:i a');
+
+                        $query="INSERT INTO orders (user, address, ordertext, price, coment, active, courier, done, time) 
+                                            VALUES ('$username', '$address', '$order', '$totalprise', '$coment', '$active', ' ', '$done', '$time')";
+                        $result = mysqli_query($link, $query);
+                        if($result)
+                        { 
+                            ?><script type="text/javascript">
+                            alert("Дякуємо за замовлення");
+                            location="cabinet.php";
+                            </script><?php
+                            unset ($_SESSION['cart']);
+                        }
+                        else
+                        {
+                            echo "Error";
+                            echo($query);
+                        }     
+                    }                 
+                          
                 }
             }
         ?>

@@ -19,59 +19,23 @@
 <body>
 
     <h2>TEST BLOCK 01</h2>
+    <h5>замовлення</h5>
 
-    <section style="min-height: 400px">
-        <?php 
-          $user = 'root';
-          $password = 'root';
-          $db = 'ddeliverybase';
-          $host = 'localhost';
-          $port = 3309;
-          
-          $link = mysqli_init();
-          $success = mysqli_real_connect(
-             $link, 
-             $host, 
-             $user, 
-             $password, 
-             $db,
-             $port
-          );
-
-          
-          $query ="SELECT name FROM food";
- 
-          $result = mysqli_query($link, $query) or die("Ошибка " . mysqli_error($link)); 
-          if($result)
-          {
-              echo "<ul>";
-              while ($row = mysqli_fetch_row($result)) {
-                  echo "<li>$row[0]</li>";
-              }
-              echo "</ul>";
-               
-              mysqli_free_result($result);
-          }
-            $order;
-            $order.="bred";
-            echo $order;
-        ?>  
-            <br>
-            <br>
-
-            <script>
-                function myFunction()
-                {
-                alert("I am an alert box!"); // this is the message in ""
-                }
-            </script>
-
-            <input type="button" class="butn" onclick="myFunction()" value="Show alert box">
-            <button class="butn" onclick="myFunction()"> alert box 3000</button>
-
-    
+    <section style="min-height: 00px">
     </section>
+    <?php
+        require 'connection.php';
+
+        $query ="SELECT * FROM orders";
+        $result=mysqli_query($link, $query);
+        while($row = $result ->fetch_assoc())
+        {
+            echo '
+                <li>'.$row['address'].'</li>
+            ';
+        }
     
+    ?>
 
     
     

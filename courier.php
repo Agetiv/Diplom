@@ -31,7 +31,20 @@
     <h4 style="text-align: center; margin: 10px;">Актуальні замовлення:</h4>
 
     <section class="orders__list">
-        <button class="butn butn__orders" style="width: 100%;" data-bs-toggle="modal" data-bs-target="#food_settings">Вул. Пироговського</button>
+        <?php
+            require 'connection.php';
+
+            $query ="SELECT * FROM orders";
+            $result=mysqli_query($link, $query);
+            while($row = $result ->fetch_assoc())
+            {
+                echo '
+                <button class="butn butn__orders" style="width: 100%; margin: 5px;" data-bs-toggle="modal" data-bs-target="#food_settings">'.$row["address"].'</button>
+                ';
+            }
+        
+        ?>
+        <button class="butn butn__orders" style="width: 100%; margin: 5px;" data-bs-toggle="modal" data-bs-target="#food_settings">Вул. Пироговського</button>
 
 
         <div class="modal fade" id="food_settings" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

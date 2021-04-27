@@ -29,7 +29,7 @@
         <div class="rest">
             <h2 class="text__header">Chin-Chin</h2>
             <img src="/img/chinchin.png" class="img__rests" alt="">
-            <button class="butn">Завітати</button>
+            <button class="butn" onclick="document.location='chin-chin.php'">Завітати</button>
         </div>
         <div class="rest">
             <h2 class="text__header">Kenza</h2>

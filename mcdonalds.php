@@ -10,6 +10,8 @@
 <body>
     <?php require "blocks/header.php"; ?>
 
+    <h2>McDonalds</h2>
+
     <section class="top__imges">
         <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
@@ -41,49 +43,69 @@
     
     </section>
 
- 
-    <section class="rests">
-        <div class="rest">
-            <img src="/img/2351_Nuggets6_1500x1500_inimitable-_2_min.webp" class="img__rests" alt="">
-            <p class="text__midle"> Нагетси</p>            
-           <p> <button class="butn btn-primary btn-buy"id="1" >add</button></p> 
-        </div>      
+    <h3 style="margin-left: 15px; margin:5px;">Borgers</h3>
 
-        <div class="rest">
-            <img src="/img/Double Chicken Kentuky.jfif" class="img__rests" alt="">
-            <p class="text__midle"> Дабл Чикен Кентуки</p>            
-           <p> <button class="butn btn-primary btn-buy"id="2" >add</button></p> 
-        </div>      
+    <section class="rests borgers">   
+        <?php
+            $query ="SELECT * FROM food WHERE type = 'burger'";
+            $result=mysqli_query($link, $query);
+            while($row = $result ->fetch_assoc())
+            {
+                echo '
+                <div class="rest">
+                <img src="'.$row["img"].'" class="img__rests" data-bs-toggle="modal" data-bs-target="#'.$row["name"].'" alt="">
+                <p class="text__midle"> '.$row["name"].' <br> '.$row["price"].' грн. </p>            
+                <p> <button class="butn btn-primary btn-buy" id="'.$row["id"].'" >додати</button></p> 
+                </div>
+            
+                    <div class="modal fade" id="'.$row["name"].'" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Чікен МакНаггетс 6шт.</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div>
+                                            <p>'.$row["rest"].'</p>
+                                            <p>'.$row["script"].'</p>
+                                            <p></p>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">назад</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    ';
+            }
 
+        ?>
     </section>
 
+    <h3 style="margin-left: 15px; margin-top:5px;">Snacks</h3>
 
-    <!-- Modal -->
-    <div class="modal fade" id="food_settings" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Нагетси</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-            <div class="modal-body">
-                <p>Смачнюші нагетси, які тануть у роті - це свіже філе курки, обсмажене в паніруванні!</p>
-                <p>Оберіть кількість:</p>
-                <div>
-                    <input type="checkbox" name="remember" value="1"/> 6 шт. 60 грн. <br><br>
-                    <input type="checkbox" name="remember" value="2"/> 10 шт. 100 грн. <br><br>
-                    <input type="checkbox" name="remember" value="3"/> 18 шт. 150 грн. <br><br>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Скасувати</button>
-                <button type="button" class="btn btn-primary btn-buy" id="1">Додати до кошику</button>
-            </div>
-            </div>
-        </div>
-    </div>
+    <section class="rests snacks">
 
+        <?php 
+            $query ="SELECT * FROM food WHERE type = 'snack'";
+            $result=mysqli_query($link, $query);
+            while($row = $result ->fetch_assoc())
+            {
+                echo '
+                    <div class="rest">
+                    <img src="'.$row["img"].'" class="img__rests" data-bs-toggle="modal" data-bs-target="#'.$row["name"].'" alt="">
+                    <p class="text__midle"> '.$row["name"].' <br> '.$row["price"].' грн. </p>            
+                    <p> <button class="butn btn-primary btn-buy" id="'.$row["id"].'" >додати</button></p> 
+                    </div>
+                ';
+            }
+        ?>
     
+    </section>   
 
     <script>
         $('.btn-buy').click(function () {//клип на кнопку

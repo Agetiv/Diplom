@@ -60,9 +60,12 @@
                 <?php endforeach; ?>                
         </table>
         <br>
-        <h5>Товарів на сумму: <?php echo $totalprise;?> грн.</h5>
+        <h5 style="margin-left: 30px;">Усього: <?php echo $totalprise+45;?> грн.</h5>
+
+        <h7>Товарів на сумму: <?php echo $totalprise;?> грн.</h7>
+        <h7>Доставка: 45 грн.</h7>     
         
-        <?php echo date('l jS \of F Y h:i:s A');?>
+        <?php date_default_timezone_set('Europe/Kiev'); ?>
 
         <?php
             # Если кнопка нажата
@@ -81,13 +84,14 @@
                     {
                         $username = $_SESSION['username'];
                         $address = $_SESSION['address'];
+                        $phone = $_SESSION['phone'];
                         $coment;
                         $active = 1;
                         $done = 0;
                         $time = date('j, n, Y, g:i a');
 
-                        $query="INSERT INTO orders (user, address, ordertext, price, coment, active, courier, done, time) 
-                                            VALUES ('$username', '$address', '$order', '$totalprise', '$coment', '$active', ' ', '$done', '$time')";
+                        $query="INSERT INTO orders (user, address, phone, ordertext, price, coment, active, courier, done, time) 
+                                            VALUES ('$username', '$address', '$phone', '$order', '$totalprise', '$coment', '$active', ' ', '$done', '$time')";
                         $result = mysqli_query($link, $query);
                         if($result)
                         { 
@@ -109,7 +113,7 @@
         ?>
 
         <form method="POST">
-            <input type="submit" class="butn" name="orderTime" value="Замовити">
+            <input type="submit" class="butn" style="margin-left: 30px;" name="orderTime" value="Замовити">
         </form>
           
         <?php endif; ?>    

@@ -27,15 +27,17 @@
                 <tr id="<?=$id?>">
                     <td>
                         <?php 
-                            $query ="SELECT name, price FROM food WHERE id='$id'";
+                            $query ="SELECT * FROM food WHERE id='$id'";
  
                             $result = mysqli_query($link, $query); 
                             if($result)
                             {
                                 while ($row = mysqli_fetch_row($result)) {
-                                    $order.='+';
-                                    $order.=$row[0];
-                                    echo "<li>$row[0]</li>";
+                                    #$order.='+';
+                                    $order.="<li>$row[1]</li>";
+                                    $rest = $row[2];
+                                    echo "<li>$row[1]</li>";
+
                                 }                                
                             }
                         ?>
@@ -90,8 +92,8 @@
                         $done = 0;
                         $time = date('j, n, Y, g:i a');
 
-                        $query="INSERT INTO orders (user, address, phone, ordertext, price, coment, active, courier, done, time) 
-                                            VALUES ('$username', '$address', '$phone', '$order', '$totalprise', '$coment', '$active', ' ', '$done', '$time')";
+                        $query="INSERT INTO orders (user, address, phone, rest, ordertext, price, coment, active, courier, done, time) 
+                                            VALUES ('$username', '$address', '$phone', '$rest', '$order', '$totalprise', '$coment', '$active', ' ', '$done', '$time')";
                         $result = mysqli_query($link, $query);
                         if($result)
                         { 

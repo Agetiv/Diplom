@@ -21,21 +21,31 @@
     <h2>TEST BLOCK 01</h2>
     <h5>замовлення</h5>
 
-    <section style="min-height: 00px">
-    </section>
-    <?php
-        require 'connection.php';
+    <section style="min-height: 400px">
+        <?php
 
-        $query ="SELECT * FROM orders";
-        $result=mysqli_query($link, $query);
-        while($row = $result ->fetch_assoc())
-        {
-            echo '
-                <li>'.$row['address'].'</li>
-            ';
-        }
+        require 'blocks/translit.php';
+
+        $text = "пушкина 20";
+
+        echo $text;
+
+      
+        ?>
+
+        <?php
+            if(isset($_POST['translate']))
+            {
+                echo translit($text);
+            }
+        ?>
+
+        <form method="POST">
+            <input type="submit" class="butn" style="margin-left: 30px;" name="translate" value="Замовити">
+        </form>
+
+    </section>
     
-    ?>
 
     
     

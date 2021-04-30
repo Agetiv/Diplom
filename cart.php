@@ -50,22 +50,30 @@
                             if($result)
                             {
                                 while ($row = mysqli_fetch_row($result)) {
-                                    $totalprise=$totalprise+$row[0];
+                                    $money = $row[0];
                                     echo " - $row[0] грн.";
                                 }                                
                             }
                         ?>
                     </td>
-                    <td><input type="number" class="count-product border" id="<?=$id?>" value="<?=$kol?>"></td>
+                    <td><input type="number" class="count-product border" id="<?=$id?>" value="<?=$kol?>">
+                    <?php 
+                        $totalprise=$totalprise+($money * $kol);
+                        $order.=" x";
+                        $order.="$kol"; 
+                    ?></td>
                     <td><button class="butn__del btn-default btn-del" id="<?=$id?>">Х</button></td>
                 </tr>
                 <?php endforeach; ?>                
         </table>
         <br>
-        <h5 style="margin-left: 30px;">Усього: <?php echo $totalprise+45;?> грн.</h5>
+        <p>--------------------------------------------------</p>
+        <h7 style="margin-left: 25px;">Товарів на сумму: <?php echo $totalprise;?> грн.</h7><br>
+        <h7 style="margin-left: 25px;">Доставка: 45 грн.</h7>
+        <p>--------------------------------------------------</p>
+        <h5 style="margin-left: 25px;">Усього: <?php echo $totalprise+45;?> грн.</h5>
 
-        <h7>Товарів на сумму: <?php echo $totalprise;?> грн.</h7>
-        <h7>Доставка: 45 грн.</h7>     
+    
         
         <?php date_default_timezone_set('Europe/Kiev'); ?>
 
@@ -87,7 +95,7 @@
                         $username = $_SESSION['username'];
                         $address = $_SESSION['address'];
                         $phone = $_SESSION['phone'];
-                        $coment;
+                        $coment = $POST['message'];
                         $active = 1;
                         $done = 0;
                         $time = date('j, n, Y, g:i a');
@@ -113,8 +121,11 @@
                 }
             }
         ?>
+        <p>Коментар:</p>
+ 
 
         <form method="POST">
+            <textarea name="message" placeholder="Щось бажаєте?" class="form-control" style="width: 300px; height:100px"></textarea><br>
             <input type="submit" class="butn" style="margin-left: 30px;" name="orderTime" value="Замовити">
         </form>
           

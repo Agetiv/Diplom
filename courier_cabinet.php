@@ -14,31 +14,17 @@
     <section class="user__info">
         <h2>Вітаємо!</h2>
         <p class="text__midle">Кур'єр: <?php echo $_SESSION['courier'];?> </p><br>
-        <p class="text__midle">Номер: 
         <?php
-            $query ="SELECT phone FROM users WHERE id='$user_id'";
-            $result = mysqli_query($link, $query); 
-            if($result)
+            $courier = $_SESSION['courier'];
+            $query ="SELECT * FROM couriers WHERE name='$courier'";
+            $result=mysqli_query($link, $query);
+            while($row = $result ->fetch_assoc())
             {
-                while ($row = mysqli_fetch_row($result)) {
-                    $_SESSION['phone']=$row[0];
-                    echo "$row[0]";
-                }                                
+                echo '
+                <p class="text__midle">Телефон: '.$row["phone"].'</p><br>
+                ';
             }
-        ?> </p><br>
-        
-        <p class="text__midle">Адреса: 
-        <?php
-            $query ="SELECT address FROM users WHERE id='$user_id'";
-            $result = mysqli_query($link, $query); 
-            if($result)
-            {
-                while ($row = mysqli_fetch_row($result)) {
-                    $_SESSION['address'] =$row[0];
-                echo "$row[0]";
-                }                                
-            }
-        ?> </p><br>
+        ?>       
     </section>
 
     <a class='btn btn-primary btn-block block__element' href='courier_logout.php'>Вийти</a>

@@ -140,6 +140,15 @@ display: flex;
     border-radius: 5px;
 }
 
+.order{
+    border: 1.5px solid #212529;
+    border-radius: 25px; 
+    height: 100px; 
+    width: 350px;
+    padding: 15px;
+    margin: 30px 15px 30px 15px;
+}
+
 @media (max-width: 768px) {
     .header__mobile{
         display: block;        

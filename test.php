@@ -22,27 +22,15 @@
     <h5>замовлення</h5>
 
     <section style="min-height: 400px">
+        
         <?php
-
-        require 'blocks/translit.php';
-
-        $text = "пушкина 20";
-
-        echo $text;
-
-      
+            echo '<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>';
+        
+            $id = $_POST['id_tov'];//получаем id заказа
+    
+            
         ?>
-
-        <?php
-            if(isset($_POST['translate']))
-            {
-                echo translit($text);
-            }
-        ?>
-
-        <form method="POST">
-            <input type="submit" class="butn" style="margin-left: 30px;" name="translate" value="Замовити">
-        </form>
+        
 
     </section>
     

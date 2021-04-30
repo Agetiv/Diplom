@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Courier</title>
+    <title>Актуальні</title>
 </head>
 <body>
     <link rel='stylesheet' href='/blocks/style.css'>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 
-    <?php require'blocks/translit.php';?>
+    <?php require 'blocks/translit.php';?>
 
     <?php require 'blocks/courier_header.php';?>
 
@@ -36,6 +36,7 @@
                         </div>
                         <div class="modal-body">
                             <div>
+                            <p>'.$row["time"].'</p>
                                 <p><b>'.$row["rest"].'</b></p>
                                 <p>------------------------</p>
                                 <p>'.$row["ordertext"].'</p>
@@ -45,23 +46,35 @@
                                 <p>Телефон:<br>'.$row["phone"].'</p>
                                 <p>Коли доставити: '.$row["timetodo"].'</p>
                                 <p>Коментар:<br>'.$row["coment"].'</p>
-
-
                             </div>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Скасувати</button>
-                            <button type="button" class="btn btn-primary">Підтвердити</button>
+
+                            <p> <button class="btn btn-primary btn-buy" id="'.$row["id"].'" >додати</button></p> 
+ 
                         </div>
                         </div>
                     </div>
                 </div>
                 ';
-            }
-        
+            }      
+
         ?>
-
-
+        <script>
+        $('.btn-buy').click(function () {//клип на кнопку
+            var id = $(this).attr('id'); //получаем id этой кнопки
+                $.ajax({//передаем ajax-запросом данные
+                type: "POST", //метод передачи данных
+                url: '/add_courier.php',//php-файл для обработки данных
+                data: {id_order: id},//передаем наши данные
+                success: function(data) {//
+                    $('.basker_kol').html(data);//меняем количество товаров на кнопке корзины 
+                    }
+                });
+                location="courier_order.php";
+            });
+        </script>
         
     </section>
 

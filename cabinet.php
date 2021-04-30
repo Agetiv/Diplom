@@ -13,42 +13,24 @@
     <?php $user_id = $_SESSION['user_id'];?>
     <section class="user__info">
         <h2>Вітаємо!</h2>
-        <p class="text__midle">Користувач: <?php echo $_SESSION['username'];?> </p><br>
-        <p class="text__midle">Номер: 
         <?php
-            $query ="SELECT phone FROM users WHERE id='$user_id'";
-            $result = mysqli_query($link, $query); 
-            if($result)
+            $query ="SELECT * FROM users WHERE id='$user_id'";
+            $result=mysqli_query($link, $query);
+            while($row = $result ->fetch_assoc())
             {
-                while ($row = mysqli_fetch_row($result)) {
-                    $_SESSION['phone']=$row[0];
-                    echo "$row[0]";
-                }                                
+                echo '
+                <p class="text__midle">Користувач: '.$row["username"].'</p><br>
+                <p class="text__midle">Email: '.$row["email"].'</p><br>
+                <p class="text__midle">Телефон: '.$row["phone"].'</p><br>
+                <p class="text__midle">Адреса: '.$row["address"].'</p><br>
+                ';
+                $_SESSION['phone'] = $row["phone"];
+                $_SESSION['address'] = $row["address"];
+                $_SESSION['email'] = $row["email"];
+
             }
-        ?> </p><br>
-        <p class="text__midle">Email: 
-        <?php
-            $query ="SELECT email FROM users WHERE id='$user_id'";
-            $result = mysqli_query($link, $query); 
-            if($result)
-            {
-                while ($row = mysqli_fetch_row($result)) {
-                echo "$row[0]";
-                }                                
-            }
-        ?> </p><br>
-        <p class="text__midle">Адреса: 
-        <?php
-            $query ="SELECT address FROM users WHERE id='$user_id'";
-            $result = mysqli_query($link, $query); 
-            if($result)
-            {
-                while ($row = mysqli_fetch_row($result)) {
-                    $_SESSION['address'] =$row[0];
-                echo "$row[0]";
-                }                                
-            }
-        ?> </p><br>
+        ?>
+        <p class="text__midle"></p>
         <a class='btn btn-primary btn-block' href='change_info.php'>редагувати</a>
 
     </section>

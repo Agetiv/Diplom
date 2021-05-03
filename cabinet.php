@@ -29,6 +29,7 @@
                 $_SESSION['email'] = $row["email"];
 
             }
+
         ?>
         <p class="text__midle"></p>
         <a class='btn btn-primary btn-block' href='change_info.php'>редагувати</a>
@@ -37,9 +38,46 @@
 
     <a class='btn btn-primary btn-block block__element' href='logout.php'>Вийти</a>
 
-    <section class="last__orders">
-        <h4>Останні замовлення:</h4>
-        <p class="text__mobile" style="text-align: center;">Інформація відсутня</p>
+    <h4>3амовлення:</h4>
+
+    <section class="last__orders" style="display: flex;">
+
+            <?php # отмена заказа
+                if( isset( $_POST['dropOrder'] ) )
+                {
+                    $username = $_SESSION['username'];
+                    $query = "UPDATE orders SET done = '2' WHERE user = '$username' and done='0';";
+                    $result = mysqli_query($link, $query);
+                    ?><script type="text/javascript">
+                    alert("Очікуйте зв'язку з оператором");
+                    location="cabinet.php";
+                    </script><?php
+                }
+
+            ?>
+
+            <?php  #вывод заказов
+                $username = $_SESSION['username'];
+                $query = "SELECT * FROM orders WHERE user = '$username' and done='0'";
+                $result = mysqli_query($link, $query);
+
+                while($row = $result ->fetch_assoc())
+                {
+                    echo '
+                    <div class="order">
+                        <p class="text__midle">Адреса: '.$row["address"].'</p>
+                        <p class="text__midle">Замовлення: '.$row["ordertext"].'</p>
+                        <p class="text__midle">Коли доставимо: '.$row["timetodo"].'</p>
+                        <div >
+                            <form action="" class="" method="POST">
+                                <input type="submit" class="butn" name="dropOrder" value="Відмовитись">
+                            </form>
+                        </div>
+                    </div>
+                        ';
+                }            
+            ?>
+
 
     </section>
 

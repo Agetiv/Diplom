@@ -80,7 +80,26 @@
         <?php
             # Если кнопка нажата
             if( isset( $_POST['orderTime'] ) )
-            {
+            {   #проверка на наличие отмененных заказов
+                $username = $_SESSION['username'];
+                $query = "SELECT * FROM orders Where user ='$username'";
+                $result = mysqli_query($link, $query);
+                while($row = $result ->fetch_assoc())
+                {
+                    if($row["done"]=='2')
+                    {
+                        ?><script type="text/javascript">
+                        alert("Вибачте, але на данний момент ви не можете зробити замовлення, зв'яжіться з оператором");
+                        location="cabinet.php";
+                        </script><?php
+
+                        exit;
+                    }
+                }
+
+
+                
+
                 if(isset($order))
                 {   
                     if(!isset($_SESSION['username']))
@@ -95,13 +114,13 @@
                         $username = $_SESSION['username'];
                         $address = $_SESSION['address'];
                         $phone = $_SESSION['phone'];
-                        $coment = $POST['message'];
+                        $coment = $_POST['message'];
                         $active = 1;
                         $done = 0;
                         $time = date('j, n, Y, g:i a');
 
                         $query="INSERT INTO orders (user, address, phone, rest, ordertext, price, coment, active, courier, done, time) 
-                                            VALUES ('$username', '$address', '$phone', '$rest', '$order', '$totalprise', '$coment', '$active', ' ', '$done', '$time')";
+                            VALUES ('$username', '$address', '$phone', '$rest', '$order', '$totalprise', '$coment', '$active', ' ', '$done', '$time')";
                         $result = mysqli_query($link, $query);
                         if($result)
                         { 
@@ -123,11 +142,13 @@
         ?>
         <p>Коментар:</p>
  
+        <div >
+            <form action="" class="" method="POST">
+                <textarea name="message" placeholder="Щось бажаєте?" class="form-control" style="width: 300px; height:100px"></textarea><br>
+                <input type="submit" class="butn" style="margin-left: 30px;" name="orderTime" value="Замовити">
+            </form>
+        </div>
 
-        <form method="POST">
-            <textarea name="message" placeholder="Щось бажаєте?" class="form-control" style="width: 300px; height:100px"></textarea><br>
-            <input type="submit" class="butn" style="margin-left: 30px;" name="orderTime" value="Замовити">
-        </form>
           
         <?php endif; ?>    
         

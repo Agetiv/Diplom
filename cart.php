@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Кошик</title>
+   <?php // header('refresh: 15'); ?> <!-- обновление страницы каждые 15 сек -->
 </head>
 <body>
 
@@ -62,18 +63,34 @@
                         $order.=" x";
                         $order.="$kol"; 
                     ?></td>
-                    <td><button class="butn__del btn-default btn-del" id="<?=$id?>">Х</button></td>
+                    <td><button class="butn__del btn-default btn-del" id="<?=$id?>" onClick="window.location.reload( true );">Х</button></td>
                 </tr>
                 <?php endforeach; ?>                
         </table>
+
+        <?php // проверка на наличие товаров в корзине
+            if( isset($_SESSION['cart']) && $totalprise == 0)
+            {
+                $_SESSION['cart']=NULL;
+
+                ?><script>
+                setTimeout(function(){
+                    location.reload();
+                }, 100);
+                </script><?php
+            }
+        ?>
+
         <br>
         <p>--------------------------------------------------</p>
         <h7 style="margin-left: 25px;">Товарів на сумму: <?php echo $totalprise;?> грн.</h7><br>
         <h7 style="margin-left: 25px;">Доставка: 45 грн.</h7>
         <p>--------------------------------------------------</p>
         <h5 style="margin-left: 25px;">Усього: <?php echo $totalprise+45;?> грн.</h5>
+        <br>
+        <h5 style="margin-left: 25px;">Адреса доставки: <?php echo $_SESSION['address']?></h5>
+        <a class="btn btn-outline-primary" style="margin-left: 25px;" href="change_info.php">змінити</a>
 
-    
         
         <?php date_default_timezone_set('Europe/Kiev'); ?>
 
@@ -140,11 +157,12 @@
                 }
             }
         ?>
-        <p>Коментар:</p>
+        
+        <p style="margin-left: 25px; margin-top: 15px">Коментар:</p>
  
         <div >
             <form action="" class="" method="POST">
-                <textarea name="message" placeholder="Щось бажаєте?" class="form-control" style="width: 300px; height:100px"></textarea><br>
+                <textarea name="message" placeholder="Щось бажаєте?" class="form-control" style="width: 300px; height:100px; margin-left: 25px;"></textarea><br>
                 <input type="submit" class="butn" style="margin-left: 30px;" name="orderTime" value="Замовити">
             </form>
         </div>

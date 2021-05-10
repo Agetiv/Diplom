@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Особистий кабінет</title>
+    <?php header('refresh: 10'); ?>
+
 </head>
 <body>
     <?php require "blocks/header.php";?>
@@ -65,6 +67,8 @@
                 {
                     echo '
                     <div class="order">
+                    <p class="text__midle">номер замовлення: '.$row["id"].'</p>
+                    <p class="text__midle">-------------------------</p>
                         <p class="text__midle">Адреса: '.$row["address"].'</p>
                         <p class="text__midle">Замовлення: '.$row["ordertext"].'</p>
                         <p class="text__midle">Коли доставимо: '.$row["timetodo"].'</p>

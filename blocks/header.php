@@ -50,7 +50,7 @@
             <a class="p-2 text-dark text__border" href="cart.php"> кошик <span class="badge basker_kol">0</span></a>
         </nav>
         <a class="btn btn-outline-primary" href="login.php">Кабінет</a>
-        <a class="btn btn-outline-primary" href="courier_login.php">Test</a>
+        <a class="btn btn-outline-primary" href="courier.php">Test</a>
 
         </header>
     </section>

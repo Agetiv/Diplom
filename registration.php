@@ -20,6 +20,8 @@
             $email = $_POST['email'];
             $password = $_POST['password'];
             $phone = $_POST ['phone'];
+
+            check($phone);
             
             $query = "INSERT INTO users (username, email, password, phone) VALUES ('$username', '$email', '$password', '$phone')";
             $result = mysqli_query($link, $query);
@@ -34,6 +36,21 @@
 
                 var_dump($query);
                 echo($query);
+            }
+        }
+    ?>
+
+    <?php 
+        function check($phone)
+        {
+            require 'connection.php';
+            $query = "SELECT * FROM users WHERE phone = '$phone'";
+            $result = mysqli_query($link, $query);
+
+            if($result)
+            {
+                $fsmsg="Цей номер зареєстрован";
+
             }
         }
     ?>

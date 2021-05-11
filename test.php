@@ -13,32 +13,18 @@
     <h5>замовлення</h5>
 
     <section style="min-height: 400px">
-
-    <div class="order">
-        <?php  
-            session_start();
-            $username = $_SESSION['username'];
-            $query = "SELECT * FROM orders WHERE user = '$username' and done='0'";
-            $result = mysqli_query($link, $query);
-            if($result)
-            {
-                while($row = $result ->fetch_assoc())
-                {
-                    echo '
-                        <p class="text__midle">Адреса: '.$row["address"].'</p>
-                        <p class="text__midle">Замовлення: '.$row["ordertext"].'</p>
-                        <p class="text__midle">Коли доставимо: '.$row["timetodo"].'</p>
-                        <p><button class="butn"> відмовитись</button></p>
-                    ';
-                }
-            }
-            else
-            {
-              echo'sorry';
-            }
-            
+        <?php 
+            if(isset($_POST['submit'])){
+                echo '';
+              }
+              else{
+                echo '<form method="post">
+                <input type="submit" name="submit" value="скрыть">
+                </form>';
+              }
         ?>
-    </div>
+
+        
     </section>
     
 

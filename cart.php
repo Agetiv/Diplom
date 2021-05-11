@@ -10,6 +10,9 @@
 <body>
 
     <?php require 'blocks/header.php' ?>    
+    
+    <?php date_default_timezone_set('Europe/Kiev'); ?>
+
 
     <h2 style="margin-left: 30px; margin-top:20px;">Кошик</h2>
 
@@ -85,14 +88,27 @@
         <p>--------------------------------------------------</p>
         <h7 style="margin-left: 25px;">Товарів на сумму: <?php echo $totalprise;?> грн.</h7><br>
         <h7 style="margin-left: 25px;">Доставка: 45 грн.</h7>
-        <p>--------------------------------------------------</p>
         <h5 style="margin-left: 25px;">Усього: <?php echo $totalprise+45;?> грн.</h5>
-        <br>
+        <p>--------------------------------------------------</p>
+
+        <form action="cart.php" style="margin-left: 25px;">
+            <p><b>Коли доставити?</b></p>
+            <?php
+                $time = date('g');
+                echo $time;
+
+            ?>
+            <form action="" method="POST">
+            <p><input name="time" type="radio" value="default"> Як умога швидше</p>
+            <p><input name="time" type="radio" value="planned"> Обрати час</p>
+            </form>
+
+
+            <!--<p><input type="submit" value="Выбрать"></p>-->
+        </form>
+
         <h5 style="margin-left: 25px;">Адреса доставки: <?php echo $_SESSION['address']?></h5>
         <a class="btn btn-outline-primary" style="margin-left: 25px;" href="change_info.php">змінити</a>
-
-        
-        <?php date_default_timezone_set('Europe/Kiev'); ?>
 
         <?php
             # Если кнопка нажата

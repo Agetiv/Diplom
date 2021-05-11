@@ -9,6 +9,7 @@
 </head>
 <body>
     <?php require "blocks/header.php"; ?>
+    <?php require "blocks/translit.php";?>
 
     <h2>McDonalds</h2>
 
@@ -53,21 +54,22 @@
             {
                 echo '
                 <div class="rest">
-                <img src="'.$row["img"].'" class="img__rests" data-bs-toggle="modal" data-bs-target="#'.$row["name"].'" alt="">
+                <img src="'.$row["img"].'" class="img__rests" data-bs-toggle="modal" data-bs-target="#'.translit($row["name"]).'" alt="">
                 <p class="text__midle"> '.$row["name"].' <br> '.$row["price"].' грн. </p>            
                 <p> <button class="butn btn-primary btn-buy" id="'.$row["id"].'" >додати</button></p> 
                 </div>
             
-                    <div class="modal fade" id="'.$row["name"].'" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal fade" id="'.translit($row["name"]).'" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel">Чікен МакНаггетс 6шт.</h5>
+                                    <h5 class="modal-title" id="exampleModalLabel">'.$row["name"].'</h5>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
                                         <div>
                                             <p>'.$row["rest"].'</p>
+                                            <p><img src="'.$row["img"].'" class="img__rests" alt=""></p>
                                             <p>'.$row["script"].'</p>
                                             <p></p>
                                         </div>
@@ -96,12 +98,36 @@
             while($row = $result ->fetch_assoc())
             {
                 echo '
-                    <div class="rest">
-                    <img src="'.$row["img"].'" class="img__rests" data-bs-toggle="modal" data-bs-target="#'.$row["name"].'" alt="">
-                    <p class="text__midle"> '.$row["name"].' <br> '.$row["price"].' грн. </p>            
-                    <p> <button class="butn btn-primary btn-buy" id="'.$row["id"].'" >додати</button></p> 
+                <div class="rest">
+                <img src="'.$row["img"].'" class="img__rests" data-bs-toggle="modal" data-bs-target="#'.translit($row["name"]).'" alt="">
+                <p class="text__midle"> '.$row["name"].' <br> '.$row["price"].' грн. </p>            
+                <p> <button class="butn btn-primary btn-buy" id="'.$row["id"].'" >додати</button></p> 
+                </div>
+            
+                    <div class="modal fade" id="'.translit($row["name"]).'" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">'.$row["name"].'</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div>
+                                            <p>'.$row["rest"].'</p>
+                                            <p><img src="'.$row["img"].'" class="img__rests" alt=""></p>
+                                            <p>'.$row["script"].'</p>
+                                            <p></p>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">назад</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                ';
+                    
+                    ';
             }
         ?>
     

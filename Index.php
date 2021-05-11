@@ -14,8 +14,25 @@
 
     <h1 class="mb-5" style="margin-left: 30px;">Ласкаво просимо!)</h1>
 
-    <div class="container mt-5">
-        <input type="text" neme="text" placeholder="Пошук страви або ресторану за назвою" class="form-control">
+    <div class="container mt-5" style="display: flex;">
+        <input type="text" name="text" placeholder="Пошук страви за назвою" class="form-control">
+
+        <form action="" method="POST">
+            <button type="submit" class="btn" name="search">🔍</button>
+        </form>
+        <?php
+            if(isset($_POST['search']))
+            {
+                $search_name = $_POST['search'];
+
+                $query = "SELECT * FROM food WHERE name = '$search_name'";
+                $result = mysqli_query($link, $query);
+                while($row = $result -> fetch_assoc())
+                {
+                    echo $row["name"];
+                }
+            }
+        ?>
     </div>
 
     <h2 style="margin-left: 30px; margin-top:20px;">Наші партнери:</h2>
@@ -40,19 +57,8 @@
             <h2 class="text__header">this.Bao</h2>
             <img src="/img/bao.png" class="img__rests" alt="">
             <button class="butn">Завітати</button>
-        </div>
-
-        
-        
-
+        </div>    
     </section>
-
-    
-
-
-
-
-
 
     <?php require "blocks/futter.php"; ?>
 

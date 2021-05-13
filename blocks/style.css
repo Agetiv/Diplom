@@ -85,6 +85,11 @@ display: flex;
     text-align: center;
 }
 
+.table{
+    border: solid black 1px;
+    text-align: center;
+}
+
 
 /* courier.php */
 

@@ -19,9 +19,9 @@
         <img src="/img/icon.png" alt="" width="50" height="50" >
         <p class="h5 my-0 me-md-auto fw-normal"><a class="p-2 text-dark text__border" href="/index.php">DDelivery</a></p>
         <nav class="my-2 my-md-0 me-md-3">
-            <a class="p-2 text-dark text__border" href="/manager_couriers.php">Кури</a>
-            <a class="p-2 text-dark text__border" href="/manager_users.php">Користувачі</a>
-            <a class="p-2 text-dark text__border" href="/manager_orders.php">Замовлення</a>
+            <a class="p-2 text-dark text__border" href="/admin_couriers.php">Кур'єи</a>
+            <a class="p-2 text-dark text__border" href="/manager_food.php">Страви</a>
+            <a class="p-2 text-dark text__border" href="/manager_rest.php">Ресторани </a>
             <a class="p-2 text-dark text__border" href="/manager_drop.php"> Відмова <span class="badge basker_kol">0</span></a>
         </nav>
         <a class="btn btn-outline-primary" href="#">Вийти</a>

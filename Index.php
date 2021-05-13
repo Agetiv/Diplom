@@ -49,9 +49,9 @@
             <button class="butn" onclick="document.location='chin-chin.php'">Завітати</button>
         </div>
         <div class="rest">
-            <h2 class="text__header">Kenza</h2>
+            <h2 class="text__header">Kinza</h2>
             <img src="/img/kenza.jpg" class="img__rests" alt="">
-            <button class="butn">Завітати</button>
+            <button class="butn" onclick="document.location='kinza.php'">Завітати</button>
         </div>
         <div class="rest">
             <h2 class="text__header">this.Bao</h2>

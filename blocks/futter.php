@@ -16,32 +16,32 @@
         <small class="d-block mb-3 text-muted">© 2020–2021</small>
       </div>
       <div class="col-6 col-md">
-        <h5>Features</h5>
+        <h5>Особливості</h5>
         <ul class="list-unstyled text-small">
-          <li><a class="link-secondary" href="#">Cool stuff</a></li>
-          <li><a class="link-secondary" href="#">Random feature</a></li>
-          <li><a class="link-secondary" href="#">Team feature</a></li>
-          <li><a class="link-secondary" href="#">Stuff for developers</a></li>
-          <li><a class="link-secondary" href="#">Another one</a></li>
-          <li><a class="link-secondary" href="#">Last time</a></li>
+          <li><a class="link-secondary" href="#">Класні речі</a></li>
+          <li><a class="link-secondary" href="#">Випадкова функція</a></li>
+          <li><a class="link-secondary" href="#">Особливість команди</a></li>
+          <li><a class="link-secondary" href="#">Матеріали для розробників</a></li>
+          <li><a class="link-secondary" href="#">Інший</a></li>
+          <li><a class="link-secondary" href="#">Останній час</a></li>
         </ul>
       </div>
       <div class="col-6 col-md">
-        <h5>Resources</h5>
+        <h5>Ресурси</h5>
         <ul class="list-unstyled text-small">
-          <li><a class="link-secondary" href="#">Resource</a></li>
-          <li><a class="link-secondary" href="#">Resource name</a></li>
-          <li><a class="link-secondary" href="#">Another resource</a></li>
-          <li><a class="link-secondary" href="#">Final resource</a></li>
+          <li><a class="link-secondary" href="#">Ресурс</a></li>
+          <li><a class="link-secondary" href="#">Конкуренція</a></li>
+          <li><a class="link-secondary" href="#">Привіт ДСу</a></li>
+          <li><a class="link-secondary" href="#">Працездатність</a></li>
         </ul>
       </div>
       <div class="col-6 col-md">
-        <h5>About</h5>
+        <h5>Про Нас</h5>
         <ul class="list-unstyled text-small">
-          <li><a class="link-secondary" href="#">Team</a></li>
-          <li><a class="link-secondary" href="#">Locations</a></li>
-          <li><a class="link-secondary" href="#">Privacy</a></li>
-          <li><a class="link-secondary" href="#">Terms</a></li>
+          <li><a class="link-secondary" href="#">Відпочинок</a></li>
+          <li><a class="link-secondary" href="#">Морозиво</a></li>
+          <li><a class="link-secondary" href="#">Цукерки</a></li>
+          <li><a class="link-secondary" href="#">Тримс</a></li>
         </ul>
       </div>
     </div>

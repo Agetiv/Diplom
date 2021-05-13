@@ -51,6 +51,7 @@
         </nav>
         <a class="btn btn-outline-primary" href="login.php">Кабінет</a>
         <a class="btn btn-outline-primary" href="courier.php">Test</a>
+        <a class="btn btn-outline-primary" href="manager.php">Менеджєр</a>
 
         </header>
     </section>

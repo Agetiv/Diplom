@@ -23,13 +23,13 @@
     <div class="first__line__butns">
             <table>
                 <tr>
-                    <td><button class="butn">японська кухня</button></td>
+                    <td><button class="butn" onclick="document.location='chin-chin.php'">японська кухня</button></td>
                 </tr>
                 <tr>
                     <td><button class="butn">українська кухня</button></td>
                 </tr>
                 <tr>
-                    <td><button class="butn">грузинська кухня</button></td>
+                    <td><button class="butn" onclick="document.location='kinza.php'">грузинська кухня</button></td>
                 </tr>
                 <tr>
                     <td><button class="butn">італійська кухня</button></td>
@@ -50,7 +50,7 @@
             <div class="rest">
                 <h2 class="text__header">Kinza</h2>
                 <img src="/img/kenza.jpg" class="img__rests" alt="">
-                <button class="butn">Завітати</button>
+                <button class="butn" onclick="document.location='kinza.php'">Завітати</button>
             </div>
             <div class="rest">
                 <h2 class="text__header">Chin-Chin</h2>

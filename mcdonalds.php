@@ -44,11 +44,11 @@
     
     </section>
 
-    <h3 style="margin-left: 15px; margin:5px;">Borgers</h3>
+    <h3 style="margin-left: 15px; margin:5px;">Бургери та роли:</h3>
 
     <section class="rests borgers">   
         <?php
-            $query ="SELECT * FROM food WHERE type = 'burger'";
+            $query ="SELECT * FROM food WHERE type = 'burger' and rest ='McDonalds'";
             $result=mysqli_query($link, $query);
             while($row = $result ->fetch_assoc())
             {
@@ -88,12 +88,57 @@
         ?>
     </section>
 
-    <h3 style="margin-left: 15px; margin-top:5px;">Snacks</h3>
+    <h3 style="margin-left: 15px; margin-top:5px;">Снекі:</h3>
 
     <section class="rests snacks">
 
         <?php 
-            $query ="SELECT * FROM food WHERE type = 'snack'";
+            $query ="SELECT * FROM food WHERE type = 'snack' and rest ='McDonalds'";
+            $result=mysqli_query($link, $query);
+            while($row = $result ->fetch_assoc())
+            {
+                echo '
+                <div class="rest">
+                <img src="'.$row["img"].'" class="img__rests" data-bs-toggle="modal" data-bs-target="#'.translit($row["name"]).'" alt="">
+                <p class="text__midle"> '.$row["name"].' <br> '.$row["price"].' грн. </p>            
+                <p> <button class="butn btn-primary btn-buy" id="'.$row["id"].'" >додати</button></p> 
+                </div>
+            
+                    <div class="modal fade" id="'.translit($row["name"]).'" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">'.$row["name"].'</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div>
+                                            <p>'.$row["rest"].'</p>
+                                            <p><img src="'.$row["img"].'" class="img__rests" alt=""></p>
+                                            <p>'.$row["script"].'</p>
+                                            <p></p>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">назад</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    ';
+            }
+        ?>
+    
+    </section>   
+
+    <h3 style="margin-left: 15px; margin-top:5px;">Меню:</h3>
+
+    <section class="rests snacks">
+
+        <?php 
+            $query ="SELECT * FROM food WHERE type = 'menu' and rest ='McDonalds'";
             $result=mysqli_query($link, $query);
             while($row = $result ->fetch_assoc())
             {

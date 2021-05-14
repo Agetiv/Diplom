@@ -11,6 +11,8 @@
 <body>
 
 <?php require "blocks/header.php" ?>
+<h6 style="margin-left: 15px;">Телефон гарячої лінії: +38(097)82 965 82</h6>
+
 <div class="container mt-5">
 <h3>Допомога</h3>
 <br>

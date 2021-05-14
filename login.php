@@ -18,13 +18,13 @@
 
         <div class="container">
             <form action="login.php" class="form-signin" method="POST">
-                <h2>Login</h2>
+                <h2>Авторизація</h2>
 
-                <input type="text" name="username" class="form-control block__element" placeholder="username" required>
-                <input type="password" name="password" class="form-control block__element" placeholder="password" required>
-                <button class="btn btn-lg btn-primary btn-block block__element" type="submit">login</button> <br>
-                <h5>or</h5>
-                <a class="btn btn-primary btn-block block__element" href="registration.php">registration</a>
+                <input type="text" name="username" class="form-control block__element" placeholder="логін" required>
+                <input type="password" name="password" class="form-control block__element" placeholder="пароль" required>
+                <button class="btn btn-lg btn-primary btn-block block__element" type="submit">Увійти</button> <br>
+                <h5>або</h5>
+                <a class="btn btn-primary btn-block block__element" href="registration.php">Зареєструватися</a>
 
             </form>
         </div>
@@ -32,7 +32,7 @@
         <?php
             session_start();
             require ('connection.php');
-            print_r($_POST);
+            #print_r($_POST);
             
             if(isset($_POST['username']) && isset($_POST['password']))
             {

@@ -13,17 +13,41 @@
     <h5>замовлення</h5>
 
     <section style="min-height: 400px">
-        <?php 
-            if(isset($_POST['submit'])){
-                echo '';
-              }
-              else{
-                echo '<form method="post">
-                <input type="submit" name="submit" value="скрыть">
-                </form>';
-              }
-        ?>
+    
+        <script type="text/javascript">
 
+        var userName2 = 'Дмитрий';
+
+        </script>
+
+        <?php
+        if (isset($_GET['u_name']))
+        {
+            $id = $_GET['u_name'];
+            echo $id;
+        }
+
+        ?>
+        <?php
+           if(isset($_POST['doneit']))
+           {
+               if($id!='')
+               {
+                $query = "UPDATE orders SET done = '1' WHERE id = '$id'";
+                $result = mysqli_query($link, $query);
+                ?><script type="text/javascript">
+                alert("Добре");
+                </script><?php
+               }
+               else
+               {
+                ?><script type="text/javascript">
+                alert("error");
+                </script><?php
+               }
+           
+           }  
+        ?>
         
     </section>
     

@@ -21,7 +21,8 @@
             if(isset($_POST['search']))
             {
                 $search = $_POST['search'];
-
+                
+                echo 'Результати пошуку:';
                 echo'<table class="table">
                 <tr>
                     <td class="table">id</td>
@@ -51,25 +52,26 @@
     <section style="width: 200px; margin-left: 15px;">
         <table class="table">
             <tr>
+                <p>Таблиця</p>
                 <td class="table">id</td>
                 <td class="table">Ім'я</td>
                 <td class="table">Номер</td>
                 <td class="table">актив</td>
             </tr>
-            <tr>
                 <?php
                     $query = "SELECT * FROM couriers";
                     $result = mysqli_query($link, $query);
                     while($row = $result -> fetch_assoc())
                     {
-                        echo '<td class="table">'.$row["id"].'</td>
+                        echo '<tr>
+                            <td class="table">'.$row["id"].'</td>
                             <td class="table">'.$row["name"].'</td>
                             <td class="table">'.$row["phone"].'</td>
                             <td class="table">'.$row["active"].'</td>
+                            </tr>
                         ';
                     }
                 ?>
-            </tr>
         </table>
     </section>
     

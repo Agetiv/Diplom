@@ -59,16 +59,16 @@
 
     <div class="container">
         <form action="" class="form-signin" method="POST">
-            <h2>Registration</h2>
+            <h2>Реєстрація</h2>
             <?php if(isset($smsg)){?><div class="alert alert-success" role="alert"> <?php echo $smsg; ?></div><?php } ?>
             <?php if(isset($fsmsg)){?><div class="alert alert-danger" role="alert"> <?php echo $fsmsg; ?></div><?php } ?>
 
 
-            <input type="text" name="username" class="form-control block__element" placeholder="username" required>
-            <input type="text" name="phone" class="form-control block__element" placeholder="phone" required>
+            <input type="text" name="username" class="form-control block__element" placeholder="нік або ім'я" required>
+            <input type="text" name="phone" class="form-control block__element" placeholder="телоефон" required>
             <input type="email" name="email" class="form-control block__element" placeholder="email" required>
-            <input type="password" name="password" class="form-control block__element" placeholder="password" required>
-            <button class="btn btn-lg btn-primary btn-block block__element" type="submit">Registration</button>
+            <input type="password" name="password" class="form-control block__element" placeholder="пароль" required>
+            <button class="btn btn-lg btn-primary btn-block block__element" type="submit">Зареєструватися</button>
         </form>
     </div>
 

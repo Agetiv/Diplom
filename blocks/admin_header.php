@@ -20,9 +20,8 @@
         <p class="h5 my-0 me-md-auto fw-normal"><a class="p-2 text-dark text__border" href="/index.php">DDelivery</a></p>
         <nav class="my-2 my-md-0 me-md-3">
             <a class="p-2 text-dark text__border" href="/admin_couriers.php">Кур'єи</a>
-            <a class="p-2 text-dark text__border" href="/manager_food.php">Страви</a>
-            <a class="p-2 text-dark text__border" href="/manager_rest.php">Ресторани </a>
-            <a class="p-2 text-dark text__border" href="/manager_drop.php"> Відмова <span class="badge basker_kol">0</span></a>
+            <a class="p-2 text-dark text__border" href="/admin_food.php">Страви</a>
+            <a class="p-2 text-dark text__border" href="/admin_rest.php">Ресторани </a>
         </nav>
         <a class="btn btn-outline-primary" href="#">Вийти</a>
 

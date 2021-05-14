@@ -22,6 +22,7 @@
             {
                 $search = $_POST['search'];
 
+                echo 'Результати пошуку:';
                 echo'<table class="table">
                 <tr>
                 <td class="table">id</td>
@@ -74,6 +75,7 @@
         
 
         <table class="table">
+            <p>Таблиця</p>
             <tr>
                 <td class="table">id</td>
                 <td class="table">Користувач</td>

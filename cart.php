@@ -95,12 +95,23 @@
             <p><b>Коли доставити?</b></p>
             <?php
                 $time = date('g');
-                echo $time;
 
             ?>
             <form action="" method="POST">
-            <p><input name="time" type="radio" value="default"> Як умога швидше</p>
+            <p><input name="time" type="radio" value="default" checked> Як умога швидше</p>
             <p><input name="time" type="radio" value="planned"> Обрати час</p>
+            <p><input type="time" name="timetodo"></p>
+
+            <!--<form action="/examples/php-scripts/time.php" method="get">
+            <p><input type="time" name="selected_time" list="time-list"></p>
+            <datalist id="time-list">
+            <option value="08:00" label="Начало рабочего дня">
+            <option value="12:00" label="Обед">
+            <option value="17:00" label="Конец рабочего дня">
+            </datalist>
+            </form> -->
+   
+            <p><small>*будьте уважні, кур'єр не зможе зробити доставку раніше ніж через годину від поточного часу*</small></p>
             </form>
 
 

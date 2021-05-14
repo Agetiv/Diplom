@@ -15,21 +15,53 @@
     <h1 class="mb-5" style="margin-left: 30px;">Ласкаво просимо!)</h1>
 
     <div class="container mt-5" style="display: flex;">
-        <input type="text" name="text" placeholder="Пошук страви за назвою" class="form-control">
 
         <form action="" method="POST">
-            <button type="submit" class="btn" name="search">🔍</button>
+            <div class="container mt-5" style="display: flex;">
+                <input type="text" name="text" placeholder="Пошук страви за назвою" style="width:1300px" class="form-control">
+                <button type="submit" class="btn" name="search">🔍</button>
+            </div>
         </form>
         <?php
             if(isset($_POST['search']))
             {
-                $search_name = $_POST['search'];
+                $search_name = $_POST['text'];
 
-                $query = "SELECT * FROM food WHERE name = '$search_name'";
-                $result = mysqli_query($link, $query);
-                while($row = $result -> fetch_assoc())
+                $query ="SELECT * FROM food WHERE name = '$search_name'";
+                $result=mysqli_query($link, $query);
+                while($row = $result ->fetch_assoc())
                 {
-                    echo $row["name"];
+                    echo '
+                    <div class="rest">
+                    <img src="'.$row["img"].'" class="img__rests" data-bs-toggle="modal" data-bs-target="#'.translit($row["name"]).'" alt="">
+                    <p class="text__midle"> '.$row["name"].' <br> '.$row["price"].' грн. </p>            
+                    <p> <button class="butn btn-primary btn-buy" id="'.$row["id"].'" >додати</button></p> 
+                    </div>
+                
+                        <div class="modal fade" id="'.translit($row["name"]).'" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">'.$row["name"].'</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div>
+                                                <p>'.$row["rest"].'</p>
+                                                <p><img src="'.$row["img"].'" class="img__rests" alt=""></p>
+                                                <p>'.$row["script"].'</p>
+                                                <p></p>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">назад</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        ';
                 }
             }
         ?>

@@ -26,9 +26,9 @@
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav">
                         <a class="nav-link" href="restourants.php">Ресторани</a>
-                        <a class="nav-link" href="#">щось новеньке</a>
+                        <a class="nav-link" href="something.php">щось новеньке</a>
                         <a class="nav-link" href="help.php">допомога</a>
-                        <a class="nav-link" href="#">кошик</a>
+                        <a class="nav-link" href="cart.php">кошик</a>
                     </div>
                     <div class="navbar-nav_1">
                 <a class="nav-link" href="login.php">Кабінет</a>
@@ -45,7 +45,7 @@
         <p class="h5 my-0 me-md-auto fw-normal"><a class="p-2 text-dark text__border" href="/index.php">DDelivery</a></p>
         <nav class="my-2 my-md-0 me-md-3">
             <a class="p-2 text-dark text__border" href="/restourants.php">ресторани</a>
-            <a class="p-2 text-dark text__border" href="#">щось новеньке</a>
+            <a class="p-2 text-dark text__border" href="something.php">щось новеньке</a>
             <a class="p-2 text-dark text__border" href="/help.php">допомога</a>
             <a class="p-2 text-dark text__border" href="cart.php"> кошик <span class="badge basker_kol">0</span></a>
         </nav>

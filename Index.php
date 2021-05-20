@@ -86,9 +86,9 @@
             <button class="butn" onclick="document.location='kinza.php'">Завітати</button>
         </div>
         <div class="rest">
-            <h2 class="text__header">this.Bao</h2>
-            <img src="/img/bao.png" class="img__rests" alt="">
-            <button class="butn">Завітати</button>
+            <h2 class="text__header">Vlavashe</h2>
+            <img src="/img/vlavashe.jpg" class="img__rests" alt="">
+            <button class="butn"onclick="document.location='vlavashe.php'">Завітати</button>
         </div>    
     </section>
 

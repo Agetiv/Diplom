@@ -53,9 +53,9 @@
                 <button class="butn" onclick="document.location='kinza.php'">Завітати</button>
             </div>
             <div class="rest">
-                <h2 class="text__header">Chin-Chin</h2>
-                <img src="/img/chinchin.png" class="img__rests" alt="">
-                <button class="butn">Завітати</button>
+                <h2 class="text__header">Lou-Lou</h2>
+                <img src="/img/lou-lou.png" class="img__rests" alt="">
+                <button class="butn" onclick="document.location='lou-lou.php'">Завітати</button>
             </div>
         </div>
     </section>
@@ -66,24 +66,24 @@
         </div>
             <div class="other__rests__rests"></div>
                 <div class="rest">
-                    <h2 class="text__header">McDonalds</h2>
-                    <img src="/img/mcdonalds.png" class="img__rests" alt="">
-                    <button class="butn">Завітати</button>
+                    <h2 class="text__header">Vlavashe</h2>
+                    <img src="/img/vlavashe.jpg" class="img__rests" alt="">
+                    <button class="butn" onclick="document.location='vlavashe.php'">Завітати</button>
                 </div>
                 <div class="rest">
-                    <h2 class="text__header">Chin-Chin</h2>
-                    <img src="/img/chinchin.png" class="img__rests" alt="chin-chin.">
-                    <button class="butn">Завітати</button>
+                    <h2 class="text__header">KFC</h2>
+                    <img src="/img/kfc.png" class="img__rests" alt="chin-chin.">
+                    <button class="butn" onclick="document.location='kfc.php'">Завітати</button>
                 </div>
                 <div class="rest">
-                    <h2 class="text__header">Kinza</h2>
-                    <img src="/img/kenza.jpg" class="img__rests" alt="">
-                    <button class="butn">Завітати</button>
+                    <h2 class="text__header">Sushi Master</h2>
+                    <img src="/img/sushi-master.png" class="img__rests" alt="">
+                    <button class="butn" onclick="document.location='vlavashe.php'">Завітати</button>
                 </div>
                 <div class="rest">
-                    <h2 class="text__header">Chin-Chin</h2>
-                    <img src="/img/chinchin.png" class="img__rests" alt="">
-                    <button class="butn">Завітати</button>
+                    <h2 class="text__header">Pomodoro</h2>
+                    <img src="/img/pomodoro.gif " class="img__rests" alt="">
+                    <button class="butn" onclick="document.location='vlavashe.php'">Завітати</button>
                 </div>
             </div>
 

@@ -21,7 +21,7 @@
         <?php
             if(isset($_POST['make']))
             {
-                $fakeid =rand(1, 25);
+                $fakeid =rand(1, 42);
                 $query ="SELECT * FROM food WHERE id = '$fakeid'";
             $result=mysqli_query($link, $query);
             while($row = $result ->fetch_assoc())

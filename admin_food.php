@@ -72,19 +72,22 @@
     
                 if(isset($_POST['username']) && isset($_POST['password']))
                 {
-                    $username = $_POST['username'];
-                    $password = $_POST['password'];
-                    $phone = $_POST ['phone'];
-
-                    check($phone);
+                    $name = $_POST['name'];
+                    $rest = $_POST['rest'];
+                    $kitchen = $_POST['kitchen'];
+                    $type = $_POST['type'];
+                    $script = $_POST['script'];
+                    $img = $_POST['img'];
+                    $price = $_POST['name'];
                     
-                    $query = "INSERT INTO couriers (name, password, phone, active) VALUES ('$username', '$password', '$phone', '1')";
+                    
+                    $query = "INSERT INTO food (name, password, phone, active) VALUES ('$username', '$password', '$phone', '1')";
                     $result = mysqli_query($link, $query);
 
                     if($result)
                     {
                         $smsg="Зареєстровано";
-                        header('Location: admin_couriers.php');
+                        header('Location: admin_food.php');
                         exit;
                     }
                     else
@@ -96,6 +99,7 @@
                     }
                 }
             ?>
+            
 
             <?php 
                 function check($phone)

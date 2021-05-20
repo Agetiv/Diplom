@@ -11,9 +11,9 @@
     <?php require 'connection.php';?>
 
     <section style="width: 200px; margin-left: 15px;">
-        <h4>Кур'єри:</h4>
+        <h4>Користувачі:</h4>
 
-        <form action="admin_couriers.php"  style="display: flex;" method="POST">
+        <form action="manager_users.php"  style="display: flex;" method="POST">
                 <input type="text" name="search" class="form-control block__element" style="width: 200px;" placeholder="пошук" required>
                 <button class="btn btn-lg btn-primary btn-block block__element" style="width: 70px;" type="submit">🔍</button>
         </form>
@@ -21,35 +21,37 @@
             if(isset($_POST['search']))
             {
                 $search = $_POST['search'];
-                
+
                 echo 'Результати пошуку:';
                 echo'<table class="table">
                 <tr>
                     <td class="table">id</td>
                     <td class="table">Імя</td>
+                    <td class="table">Пошта</td>
                     <td class="table">Номер</td>
-                    <td class="table">Актив</td>
+                    <td class="table">Адреса</td>
                     <td class="table">Пароль</td>
                     <td class="table">Опція</td>
                 </tr>';
 
-                $query = "SELECT * FROM couriers WHERE id like '$search' or name like '$search' or phone like '$search'";
+                $query = "SELECT * FROM users WHERE id like '$search' or username like '$search' or email like '$search' or phone like '$search' or address like '$search'";
                 $result = mysqli_query($link, $query);
                 while($row = $result -> fetch_assoc())
                 {
                     echo '
                         <tr>
                         <td class="table">'.$row["id"].'</td>
-                        <td class="table">'.$row["name"].'</td>
+                        <td class="table">'.$row["username"].'</td>
+                        <td class="table">'.$row["email"].'</td>
                         <td class="table">'.$row["phone"].'</td>
-                        <td class="table">'.$row["active"].'</td>
+                        <td class="table">'.$row["address"].'</td>
                         <td class="table">'.$row["password"].'</td>
                         <td class="table"> 
-                        <form method="POST" action="admin_couriers.php.php">
-                            <input type="hidden" name="id_director" value="'.$row["id"].'" />                   
-                            <input type="submit" name="starto" class="butn" value="Видалити" onClick="window.location.reload( true );">
-                        </form>
-                        </td>
+                                <form method="POST" action="admin_users.php">
+                                    <input type="hidden" name="id_director" value="'.$row["id"].'" />                   
+                                    <input type="submit" name="starto" class="butn" value="Видалити" onClick="window.location.reload( true );">
+                                </form>
+                                </td>
                         </tr>
                     ';
                 }
@@ -58,76 +60,79 @@
         ?>
     </section>
 
-    <section style="width: 200px; margin-left: 15px; display:flex">
+    <section style="width: 200px; margin-left: 15px; display:flex;">
+        
         <div>
             <table class="table">
+                <p>Таблиця</p>
                 <tr>
-                    <p>Таблиця</p>
                     <td class="table">id</td>
                     <td class="table">Ім'я</td>
+                    <td class="table">Пошта</td>
                     <td class="table">Номер</td>
-                    <td class="table">актив</td>
+                    <td class="table">Адреса</td>
                     <td class="table">Пароль</td>
                     <td class="table">Опція</td>
                 </tr>
                 
                     <?php
-                        $query = "SELECT * FROM couriers";
+                        $query = "SELECT * FROM users";
                         $result = mysqli_query($link, $query);
                         while($row = $result -> fetch_assoc())
                         {
                             echo '<tr>
                                 <td class="table">'.$row["id"].'</td>
-                                <td class="table">'.$row["name"].'</td>
+                                <td class="table">'.$row["username"].'</td>
+                                <td class="table">'.$row["email"].'</td>
                                 <td class="table">'.$row["phone"].'</td>
-                                <td class="table">'.$row["active"].'</td>
+                                <td class="table">'.$row["address"].'</td>
                                 <td class="table">'.$row["password"].'</td>
                                 <td class="table"> 
-                                <form method="POST" action="admin_couriers.php">
-                                    <input type="hidden" name="id_director" value="'.$row["id"].'" />                   
-                                    <input type="submit" name="starto" class="butn" value="Видалити" onClick="window.location.reload( true );">
-                                </form>
-                                </td>
+                                    <form method="POST" action="admin_users.php">
+                                        <input type="hidden" name="id_director" value="'.$row["id"].'" />                   
+                                        <input type="submit" name="starto" class="butn" value="Видалити" onClick="window.location.reload( true );">
+                                    </form>
+                                    </td>
                                 </tr>
                             ';
                         }
-                        echo'</table>';
                     ?>
-
-                    <?php
-                        if(isset($_POST['starto']))
-                        {
-                            $id_director = $_POST['id_director'];
-                            $query = "DELETE FROM couriers WHERE id = '$id_director'";
-                            $result = mysqli_query($link, $query);
-                            header("Refresh:0");
-                        }        
-                    ?>
+            </table>
+                        <?php
+                            if(isset($_POST['starto']))
+                            {
+                                $id_director = $_POST['id_director'];
+                                $query = "DELETE FROM couriers WHERE id = '$id_director'";
+                                $result = mysqli_query($link, $query);
+                                header("Refresh:0");
+                            }        
+                        ?>
         </div>
 
         <div>
-            <?php require ('connection.php');
-    
+                <?php require ('connection.php');
+                
                 if(isset($_POST['username']) && isset($_POST['password']))
                 {
                     $username = $_POST['username'];
+                    $email = $_POST['email'];
                     $password = $_POST['password'];
                     $phone = $_POST ['phone'];
 
                     check($phone);
                     
-                    $query = "INSERT INTO couriers (name, password, phone, active) VALUES ('$username', '$password', '$phone', '1')";
+                    $query = "INSERT INTO users (username, email, password, phone) VALUES ('$username', '$email', '$password', '$phone')";
                     $result = mysqli_query($link, $query);
 
                     if($result)
                     {
-                        $smsg="Зареєстровано";
+                        $smsg="Вітаємо, Ви зареєстровані!";
                         header('Location: admin_couriers.php');
                         exit;
                     }
                     else
                     {
-                        $fsmsg="Помилка";
+                        $fsmsg="Error";
 
                         var_dump($query);
                         echo($query);
@@ -139,7 +144,7 @@
                 function check($phone)
                 {
                     require 'connection.php';
-                    $query = "SELECT * FROM couriers WHERE phone = '$phone'";
+                    $query = "SELECT * FROM users WHERE phone = '$phone'";
                     $result = mysqli_query($link, $query);
 
                     if($result)
@@ -150,20 +155,24 @@
                 }
             ?>
 
+
+
             <div class="container">
                 <form action="" class="form-signin" method="POST">
-                    <h2>Реєстрація</h2>
+                    <h2>Додати користувача</h2>
                     <?php if(isset($smsg)){?><div class="alert alert-success" role="alert"> <?php echo $smsg; ?></div><?php } ?>
                     <?php if(isset($fsmsg)){?><div class="alert alert-danger" role="alert"> <?php echo $fsmsg; ?></div><?php } ?>
 
 
-                    <input type="text" name="username" class="form-control block__element" placeholder="ім'я" required>
+                    <input type="text" name="username" class="form-control block__element" placeholder="нік або ім'я" required>
                     <input type="text" name="phone" class="form-control block__element" placeholder="телоефон" required>
+                    <input type="email" name="email" class="form-control block__element" placeholder="email" required>
                     <input type="password" name="password" class="form-control block__element" placeholder="пароль" required>
-                    <button class="btn btn-lg btn-primary btn-block block__element" type="submit">Зареєструвати</button>
+                    <button class="btn btn-lg btn-primary btn-block block__element" type="submit">Додати</button>
                 </form>
-            </div>
-        </div>                    
+            </div>  
+        </div>
+        
     </section>
     
 

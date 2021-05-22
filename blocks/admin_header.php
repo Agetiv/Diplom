@@ -22,7 +22,7 @@
             <a class="p-2 text-dark text__border" href="/admin_couriers.php">Кур'єи</a>
             <a class="p-2 text-dark text__border" href="/admin_users.php">Користувачі</a>
             <a class="p-2 text-dark text__border" href="/admin_food.php">Страви</a>
-            <a class="p-2 text-dark text__border" href="/admin_rest.php">Ресторани </a>
+            <a class="p-2 text-dark text__border" href="/admin_rests.php">Ресторани </a>
         </nav>
         <a class="btn btn-outline-primary" href="#">Вийти</a>
 

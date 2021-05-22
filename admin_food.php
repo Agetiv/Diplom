@@ -52,7 +52,7 @@
                                 <td class="table">'.$row["img"].'</td>
                                 <td class="table">'.$row["price"].'</td>
                                 <td class="table"> 
-                                <form method="POST" action="admin_couriers.php">
+                                <form method="POST" action="admin_food.php">
                                     <input type="hidden" name="id_director" value="'.$row["id"].'" />                   
                                     <input type="submit" name="starto" class="butn" value="Видалити" onClick="window.location.reload( true );">
                                 </form>
@@ -70,7 +70,7 @@
     <div>
             <?php require ('connection.php');
     
-                if(isset($_POST['username']) && isset($_POST['password']))
+                if(isset($_POST['name']) && isset($_POST['rest']))
                 {
                     $name = $_POST['name'];
                     $rest = $_POST['rest'];
@@ -78,10 +78,11 @@
                     $type = $_POST['type'];
                     $script = $_POST['script'];
                     $img = $_POST['img'];
-                    $price = $_POST['name'];
+                    $price = $_POST['price'];
                     
                     
-                    $query = "INSERT INTO food (name, password, phone, active) VALUES ('$username', '$password', '$phone', '1')";
+                    $query = "INSERT INTO food (name, rest, kitchen, type, script, img, price) 
+                                        VALUES ('$name', '$rest', '$kitchen', '$type', '$script', '$img', '$price')";
                     $result = mysqli_query($link, $query);
 
                     if($result)
@@ -100,21 +101,6 @@
                 }
             ?>
             
-
-            <?php 
-                function check($phone)
-                {
-                    require 'connection.php';
-                    $query = "SELECT * FROM couriers WHERE phone = '$phone'";
-                    $result = mysqli_query($link, $query);
-
-                    if($result)
-                    {
-                        $fsmsg="Цей номер зареєстрован";
-
-                    }
-                }
-            ?>
 
             <div class="container">
                 <form action="" class="form-signin" style="width: 500px;" method="POST">
@@ -166,7 +152,7 @@
                                 <td class="table">'.$row["img"].'</td>
                                 <td class="table">'.$row["price"].'</td>
                                 <td class="table"> 
-                                <form method="POST" action="admin_couriers.php">
+                                <form method="POST" action="admin_food.php">
                                     <input type="hidden" name="id_director" value="'.$row["id"].'" />                   
                                     <input type="submit" name="starto" class="butn" value="Видалити" onClick="window.location.reload( true );">
                                 </form>
@@ -181,7 +167,7 @@
                         if(isset($_POST['starto']))
                         {
                             $id_director = $_POST['id_director'];
-                            $query = "DELETE FROM couriers WHERE id = '$id_director'";
+                            $query = "DELETE FROM food WHERE id = '$id_director'";
                             $result = mysqli_query($link, $query);
                             header("Refresh:0");
                         }        

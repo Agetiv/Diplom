@@ -152,7 +152,7 @@
 
             <div class="container">
                 <form action="" class="form-signin" method="POST">
-                    <h2>Реєстрація</h2>
+                    <h2>Зареєструвати кур'єра</h2>
                     <?php if(isset($smsg)){?><div class="alert alert-success" role="alert"> <?php echo $smsg; ?></div><?php } ?>
                     <?php if(isset($fsmsg)){?><div class="alert alert-danger" role="alert"> <?php echo $fsmsg; ?></div><?php } ?>
 

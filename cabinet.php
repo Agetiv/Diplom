@@ -34,11 +34,12 @@
 
         ?>
         <p class="text__midle"></p>
-        <a class='btn btn-primary btn-block' href='change_info.php'>редагувати</a>
+        <a class='btn btn-primary btn-block' style="width:200px;" href='change_info.php'>редагувати</a>
 
     </section>
 
-    <a class='btn btn-primary btn-block block__element' href='logout.php'>Вийти</a>
+    <a class='btn btn-primary btn-block' style="margin:10px; width:200px;" href='logout.php'>Вийти</a>
+
 
     <h4>3амовлення:</h4>
 

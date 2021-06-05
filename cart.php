@@ -18,8 +18,7 @@
 
     <section class="page">
         <?php session_start();
-        #$order;
-        #$totalprise;
+
         if (!isset($_SESSION['cart'])):?>
 
         <h3>Порожньо...</h3>

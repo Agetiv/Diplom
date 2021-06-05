@@ -32,7 +32,6 @@
                     </div>
                     <div class="navbar-nav_1">
                 <a class="nav-link" href="login.php">Кабінет</a>
-                <a class="nav-link" href="courier.php">test</a>
               </div>
                 </div>
             </div>
@@ -50,9 +49,6 @@
             <a class="p-2 text-dark text__border" href="cart.php"> кошик <span class="badge basker_kol">0</span></a>
         </nav>
         <a class="btn btn-outline-primary" href="login.php">Кабінет</a>
-        <a class="btn btn-outline-primary" href="courier.php">Test</a>
-        <a class="btn btn-outline-primary" href="manager.php">Менеджєр</a>
-
         </header>
     </section>
     

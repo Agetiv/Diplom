@@ -11,9 +11,7 @@
 <body>
 
     <?php require "blocks/header.php"; ?>
-
     <h1 class="mb-5" style="margin-left: 30px;">Ласкаво просимо!)</h1>
-
     <div class="container mt-5" style="display: flex;">
 
         <form action="" method="POST">
@@ -66,9 +64,7 @@
             }
         ?>
     </div>
-
     <h2 style="margin-left: 30px; margin-top:20px;">Наші партнери:</h2>
-
     <section class="rests">
         <div class="rest">
             <h2 class="text__header">McDonalds</h2>
@@ -91,9 +87,7 @@
             <button class="butn"onclick="document.location='vlavashe.php'">Завітати</button>
         </div>    
     </section>
-
     <?php require "blocks/futter.php"; ?>
-
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
     </script>

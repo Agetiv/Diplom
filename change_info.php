@@ -10,6 +10,16 @@
 
     <?php require 'blocks/header.php';?>
     <?php session_start()?>
+
+    <?php 
+        if(!isset($_SESSION['username']))
+        {   
+           ?> <script>                               
+            alert("Авторизуйтесь!");  
+            location="login.php";                         
+            </script> <?php
+        }
+    ?>
     <h2>Змінення данних:</h2>
     
     <section style="margin-left: 15px;">

@@ -108,7 +108,13 @@
             <!--<p><input type="submit" value="Выбрать"></p>-->
         </form>
 
-        <h5 style="margin-left: 25px;">Адреса доставки: <?php echo $_SESSION['address']?></h5>
+        <h5 style="margin-left: 25px;">Адреса доставки:
+         <?php
+            if(isset($_SESSION['username']))
+            {   
+                echo $_SESSION['address'];
+            }
+        ?></h5>
         <a class="btn btn-outline-primary" style="margin-left: 25px;" href="change_info.php">змінити</a>
 
         <?php
@@ -140,7 +146,8 @@
                     {   
   
                        ?> <script>                               
-                        alert("Авторизуйтесь!");                           
+                        alert("Авторизуйтесь!");  
+                        location="login.php";                         
                         </script> <?php
                     }
                     else

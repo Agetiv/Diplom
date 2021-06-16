@@ -41,6 +41,7 @@
                                 echo '
                                 <div style="margin-left: 15px;">
                                     <p>'.$row["time"].'</p>
+                                    <p><b>'.$row["address"].'</b></p>
                                     <p><b>'.$row["rest"].'</b></p>
                                     <p>------------------------</p>
                                     <p>'.$row["ordertext"].'</p>
